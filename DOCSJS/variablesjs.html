@@ -37,13 +37,6 @@
             color: #f7f7f7;
             text-align: center;
         }
-        pre {
-            background-color: #f5f5f5;
-            padding: 4px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin-top: 10px;
-        }
         footer {
             text-align: center;
             padding: 20px 0;
@@ -53,19 +46,24 @@
         }
         h2 {
             text-align: center;
+            margin-top: 20px;
+            color: #333;
         }
         img {
-            max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
-            height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
-            display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
-            margin: 0 auto; /* Centre l'image horizontalement */
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         section {
-            background-color: #ffffff; /* Couleur de fond */
-            border-radius: 8px; /* Coins arrondis */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
-            padding: 20px; /* Espacement intérieur */
-            margin-bottom: 20px; /* Marge inférieure */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
         }
         nav {
             width: 25%;
@@ -105,7 +103,7 @@
         nav li:hover {
             background-color: black;
         }
-                /* Styles pour le menu hamburger */
+        /* Styles pour le menu hamburger */
         .menu-toggle {
             display: none; /* Masquer par défaut sur les grands écrans */
             cursor: pointer;
@@ -139,93 +137,49 @@
 </head>
 <body>
     <header>
-        <h1>Javascript - Les Variables</h1>
+        <h1>Documentation JavaScript</h1>
     </header>
     <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
     <div class="container">
         <nav>
             <h2>Menu</h2>
             <ul>
-                <a href="typesjs.html"><li>Types de Données</li></a>
-                <a href="variablesjs.html"><li>Variables et Assignation</li></a>
-                <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
-                <a href="typesconversions.html"><li>Conversions de Types</li></a>
+                <a href="#types"><li>Les Variables en JavaScript</li></a>
+                <a href="#utils"><li>Étapes de création d'une variable</li></a>
+                <a href="#const"><li>Utilisation d'une variable const</li></a>
+                <a href="#let"><li>Utilisation d'une variable let</li></a>
             </ul>
         </nav>
-
         <main>
             <section id="types">
                 <h2>Les Variables en JavaScript</h2>
-                <p>En JavaScript, il existe trois façons de déclarer une variable, chacune peut stocker n'importe quel <a href="typesjs.html">type de données</a> :</p>
-                <ul>
-                    <li><strong>const :</strong> C'est une variable à laquelle nous ne pourrons jamais changer sa valeur.</li>
-                    <li><strong>let :</strong> C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
-                    <li><strong>var :</strong> C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
-                </ul>
+                <p>En JavaScript, vous pouvez utiliser les mots-clés <code>const</code>, <code>let</code> et <code>var</code> pour déclarer des variables. Chaque mot-clé a un comportement différent en termes de portée et de mutabilité.</p>
             </section>
-
             <section id="utils">
-                <h2>Étapes de création d'une variable :</h2>
+                <h2>Étapes de création d'une variable</h2>
                 <ol>
-                    <li>
-                        <strong>Ajout du mot clé de la variable :</strong>
-                        <ul>
-                            <li><strong>const :</strong> Déclare une variable avec une valeur constante.</li>
-                            <pre>       const nomDeVariable = valeur;</pre>
-                            <li><strong>let :</strong> Déclare une variable avec une valeur modifiable.</li>
-                            <pre>       let nomDeVariable = valeur;</pre>
-                            <li><strong>var :</strong> Déclare une variable avec une portée globale ou de fonction.</li>
-                            <pre>       var monNomDeVariable = valeur;</pre>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Le nom de la variable :</strong>
-                        <ul>
-                            <li><strong>camelCase :</strong> Notation où la première lettre de chaque mot (sauf le premier) est en majuscule.</li>
-                            <pre>       let produitVaisselle;</pre>
-                            <li><strong>snake_case :</strong> Notation où les mots sont séparés par des underscores "_".</li>
-                            <pre>       let _produit;</pre>
-                            <pre>       let produit_vaisselle;</pre>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Le signe d'assignement :</strong>
-                        <ul>
-                            <li><strong>le signe égal : </strong> Utilisé pour assigner une valeur à une variable.</li>
-                            <pre>       let _produit = "MIR";</pre>
-                            <pre>       let prix_produit = 10;</pre>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>La valeur de la variable :</strong>
-                        <ul>
-                            <li><strong>données :</strong> Peut être un tableau, un nombre, un booléen, une chaîne de caractères, etc.</li>
-                            <pre>       let _produit = "MIR";</pre>
-                            <pre>       let prix_produit = 10;</pre>
-                        </ul>
-                    </li>
+                    <li>Ajout du mot clé de la variable.</li>
+                    <li>Le nom de la variable.</li>
+                    <li>Le signe d'assignement.</li>
+                    <li>La valeur de la variable.</li>
                 </ol>
             </section>
-
             <section id="const">
                 <h2>Utilisation d'une variable const</h2>
-                <p>La variable <code>const</code> est utilisée pour déclarer des valeurs constantes qui ne peuvent pas être modifiées une fois assignées. Pour les objets et les tableaux déclarés avec <code>const</code>, leurs propriétés ou éléments peuvent cependant être modifiés.</p>
-                <img src="../RAYSOIMAGES/constjs.png">
+                <p>La variable <code>const</code> permet de déclarer des constantes en JavaScript. Une fois assignée, une constante ne peut pas être réassignée à une nouvelle valeur.</p>
+                <img src="../RAYSOIMAGES/constjs.png" alt="Exemple const JavaScript">
             </section>
-
             <section id="let">
                 <h2>Utilisation d'une variable let</h2>
-                <p>La variable <code>let</code> est utilisée pour déclarer des variables dont la valeur peut être modifiée ultérieurement. Contrairement à <code>const</code>, les variables déclarées avec <code>let</code> peuvent être réassignées.</p>
-                <img src="../RAYSOIMAGES/letjs.png">
+                <p>La variable <code>let</code> permet de déclarer des variables avec une portée de bloc. Contrairement à <code>const</code>, les variables déclarées avec <code>let</code> peuvent être réassignées à de nouvelles valeurs.</p>
+                <img src="../RAYSOIMAGES/letjs.png" alt="Exemple let JavaScript">
             </section>
-            
         </main>
     </div>
-
     <footer>
         <p>&copy; 2024 Documentation JavaScript</p>
     </footer>
-        <script>
+    <script>
         // Fonction pour afficher/cacher le menu
         function toggleMenu() {
             var nav = document.querySelector('nav');
