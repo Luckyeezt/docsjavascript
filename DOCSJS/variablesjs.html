@@ -27,9 +27,9 @@
             padding: 0 20px;
         }
         main {
-            flex: 1;
+            width: 75%;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ccc;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -58,8 +58,7 @@
             max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
             height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
             display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
-            margin: 20px auto;
-            border-radius: 8px;
+            margin: 0 auto; /* Centre l'image horizontalement */
         }
         section {
             background-color: #ffffff; /* Couleur de fond */
@@ -68,28 +67,50 @@
             padding: 20px; /* Espacement intérieur */
             margin-bottom: 20px; /* Marge inférieure */
         }
-@media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            nav {
-                width: 100%;
-                margin-bottom: 20px;
-                display: none; /* Masquer le menu par défaut sur les petits écrans */
-            }
-            .menu-toggle {
-                display: block; /* Afficher le bouton du menu hamburger */
-            }
-            nav.open {
-                display: block; /* Afficher le menu lorsque le bouton est cliqué */
-            }
-        }
+        @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+        margin-bottom: 20px;
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+    }
+    .menu-toggle {
+        display: block; /* Afficher le bouton du menu hamburger */
+    }
+    nav.open {
+        display: block; /* Afficher le menu lorsque le bouton est cliqué */
+    }
+    main {
+        width: 100%;
+        padding: 20px; /* Ajoutez un padding pour l'intérieur de la section principale */
+    }
+    section {
+        width: 100%; /* Occupera toute la largeur de l'écran */
+        padding: 20px; /* Espacement intérieur */
+        margin-bottom: 20px; /* Marge inférieure entre les sections */
+    }
+    img {
+        max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
+        height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+        display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
+        margin: 20px auto; /* Centre l'image horizontalement avec un espace supplémentaire */
+        border-radius: 8px; /* Ajoutez une bordure arrondie aux images */
+    }
+}
         nav {
             width: 25%;
             background-color: #f5f5f5;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         nav ul {
             list-style: none;
