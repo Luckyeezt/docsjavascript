@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation JavaScript</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        main {
+            width: 75%;
+            padding: 20px;
+            background-color: #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        nav {
+            width: 25%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: block;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: black;
+        }
+        nav li:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documentation JavaScript</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="typesjs.html">Types de Données</a></li>
+                <li><a href="variablesjs.html">Variables et Assignation</a></li>
+                <li><a href="operateursjs.html">Opérateurs Arithmétiques</a></li>
+                <li><a href="typesconversions.html">Conversions de Types</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="types">
+                <h2>Les Conversions de Types</h2>
+                <p>En JavaScript, il existe trois fonctions pour convertir un type en un autre :</p>
+                <ul>
+                    <li><strong>Number() :</strong> Convertit une valeur en un nombre.</li>
+                    <li><strong>String() :</strong> Convertit une valeur en une chaîne de caractères (string).</li>
+                    <li><strong>Boolean() :</strong> Convertit une valeur en un booléen (true ou false).</li>
+                </ul>
+            </section>
+
+            <section id="number">
+                <h2>La fonction Number()</h2>
+                <p>La fonction <code>Number()</code> est utilisée pour convertir une valeur en un nombre en JavaScript. Elle peut convertir des chaînes de caractères contenant des chiffres en nombres, ainsi que d'autres types de valeurs en leur représentation numérique.</p>
+                <img src="../RAYSOIMAGES/numberFunctionjs.png" alt="Exemple de Number()">
+            </section>
+
+            <section id="number">
+                <h2>La fonction String()</h2>
+                <p>La fonction <code>String()</code> est utilisée pour convertir une valeur en une chaine de caractères en Javascript. Elle peut convertir des chaînes de caractères contenant des chiffres en nombres, ainsi que d'autres types de valeurs en leur représentation numérique.</p>
+                <img src="../RAYSOIMAGES/numberFunctionjs.png" alt="Exemple de Number()">
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Documentation JavaScript</p>
+    </footer>
+</body>
+</html>

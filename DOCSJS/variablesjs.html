@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation JavaScript</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        main {
+            width: 75%;
+            padding: 20px;
+            background-color: #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #f7f7f7;
+            text-align: center;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 4px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        h2 {
+            text-align: center;
+        }
+        img {
+            max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
+            height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+            display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
+            margin: 0 auto; /* Centre l'image horizontalement */
+        }
+        section {
+            background-color: #ffffff; /* Couleur de fond */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            padding: 20px; /* Espacement intérieur */
+            margin-bottom: 20px; /* Marge inférieure */
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            main {
+                width: 100%;
+            }
+            img {
+                max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
+                height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+                display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
+                margin: 20px auto; /* Centre l'image horizontalement avec un espace supplémentaire */
+            }
+            .container {
+                flex-direction: column;
+            }
+        }
+        nav {
+            width: 25%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: black;
+        }
+        nav li:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Javascript - Les Variables</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <h2>Menu</h2>
+            <ul>
+                <a href="typesjs.html"><li>Types de Données</li></a>
+                <a href="variablesjs.html"><li>Variables et Assignation</li></a>
+                <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
+                <a href="typesconversions.html"><li>Conversions de Types</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="types">
+                <h2>Les Variables en JavaScript</h2>
+                <p>En JavaScript, il existe trois façons de déclarer une variable, chacune peut stocker n'importe quel <a href="typesjs.html">type de données</a> :</p>
+                <ul>
+                    <li><strong>const :</strong> C'est une variable à laquelle nous ne pourrons jamais changer sa valeur.</li>
+                    <li><strong>let :</strong> C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
+                    <li><strong>var :</strong> C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
+                </ul>
+            </section>
+
+            <section id="utils">
+                <h2>Étapes de création d'une variable :</h2>
+                <ol>
+                    <li>
+                        <strong>Ajout du mot clé de la variable :</strong>
+                        <ul>
+                            <li><strong>const :</strong> Déclare une variable avec une valeur constante.</li>
+                            <pre>       const nomDeVariable = valeur;</pre>
+                            <li><strong>let :</strong> Déclare une variable avec une valeur modifiable.</li>
+                            <pre>       let nomDeVariable = valeur;</pre>
+                            <li><strong>var :</strong> Déclare une variable avec une portée globale ou de fonction.</li>
+                            <pre>       var monNomDeVariable = valeur;</pre>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Le nom de la variable :</strong>
+                        <ul>
+                            <li><strong>camelCase :</strong> Notation où la première lettre de chaque mot (sauf le premier) est en majuscule.</li>
+                            <pre>       let produitVaisselle;</pre>
+                            <li><strong>snake_case :</strong> Notation où les mots sont séparés par des underscores "_".</li>
+                            <pre>       let _produit;</pre>
+                            <pre>       let produit_vaisselle;</pre>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Le signe d'assignement :</strong>
+                        <ul>
+                            <li><strong>le signe égal : </strong> Utilisé pour assigner une valeur à une variable.</li>
+                            <pre>       let _produit = "MIR";</pre>
+                            <pre>       let prix_produit = 10;</pre>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>La valeur de la variable :</strong>
+                        <ul>
+                            <li><strong>données :</strong> Peut être un tableau, un nombre, un booléen, une chaîne de caractères, etc.</li>
+                            <pre>       let _produit = "MIR";</pre>
+                            <pre>       let prix_produit = 10;</pre>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="const">
+                <h2>Utilisation d'une variable const</h2>
+                <p>La variable <code>const</code> est utilisée pour déclarer des valeurs constantes qui ne peuvent pas être modifiées une fois assignées. Pour les objets et les tableaux déclarés avec <code>const</code>, leurs propriétés ou éléments peuvent cependant être modifiés.</p>
+                <img src="../RAYSOIMAGES/constjs.png">
+            </section>
+
+            <section id="let">
+                <h2>Utilisation d'une variable let</h2>
+                <p>La variable <code>let</code> est utilisée pour déclarer des variables dont la valeur peut être modifiée ultérieurement. Contrairement à <code>const</code>, les variables déclarées avec <code>let</code> peuvent être réassignées.</p>
+                <img src="../RAYSOIMAGES/letjs.png">
+            </section>
+            
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Documentation JavaScript</p>
+    </footer>
+</body>
+</html>

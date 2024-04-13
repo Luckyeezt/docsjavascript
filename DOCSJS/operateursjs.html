@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation JavaScript</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        main {
+            width: 75%;
+            padding: 20px;
+            background-color: #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #f7f7f7;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        h2 {
+            text-align: center;
+        }
+        img {
+            max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
+            height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+            display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
+            margin: 0 auto; /* Centre l'image horizontalement */
+        }
+
+        section {
+            background-color: #ffffff; /* Couleur de fond */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            padding: 20px; /* Espacement intérieur */
+            margin-bottom: 20px; /* Marge inférieure */
+        }
+
+        #assignation li {
+            margin-bottom: 5px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 15px;
+            text-align: center;
+            list-style: none;
+}
+
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            main {
+                width: 100%;
+            }
+            img {
+                max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
+                height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+                display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
+                margin: 20px auto; /* Centre l'image horizontalement avec un espace supplémentaire */
+            }
+            .container {
+                flex-direction: column;
+            }
+}
+nav {
+            width: 25%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: black;
+        }
+        nav li:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Javascript - Les Opérateurs Arithmétiques</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <h2>Menu</h2>
+            <ul>
+                <a href="typesjs.html"><li>Types de Données</li></a>
+                <a href="variablesjs.html"><li>Variables et Assignation</li></a>
+                <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
+                <a href="typesconversions.html"><li>Conversions de Types</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="operateurs">
+                <h2>Les Opérateurs Arithmétiques en JavaScript</h2>
+                <p>JavaScript offre plusieurs opérateurs arithmétiques pour effectuer des calculs numériques. Voici les principaux opérateurs :</p>
+                <ul>
+                    <li><strong>+</strong> : Addition</li>
+                    <li><strong>-</strong> : Soustraction</li>
+                    <li><strong>*</strong> : Multiplication</li>
+                    <li><strong>/</strong> : Division</li>
+                    <li><strong>%</strong> : Modulo (reste de la division)</li>
+                    <li><strong>**</strong> : Puissance (exposant)</li>
+                </ul>
+            </section>
+
+                <section id="addition">
+                    <h2>Opérateur d'Addition (+)</h2>
+                    <p>L'opérateur d'addition <code>+</code> permet d'additionner deux valeurs numériques :</p>
+                    <img src="../RAYSOIMAGES/additionjs.png" alt="additions">
+                </section>
+    
+                <section id="soustraction">
+                    <h2>Opérateur de Soustraction (-)</h2>
+                    <p>L'opérateur de soustraction <code>-</code> permet de soustraire une valeur numérique d'une autre :</p>
+                    <pre>
+                        <img src="../RAYSOIMAGES/soustractionjs.png" alt="soustractions">
+                    </pre>
+                </section>
+    
+                <section id="multiplication">
+                    <h2>Opérateur de Multiplication (*)</h2>
+                    <p>L'opérateur de multiplication <code>*</code> permet de multiplier deux valeurs numériques :</p>
+                    <pre>
+                        <img src="../RAYSOIMAGES/multiplicationjs.png" alt="multiplications">
+                    </pre>
+                </section>
+    
+                <section id="division">
+                    <h2>Opérateur de Division (/)</h2>
+                    <p>L'opérateur de division <code>/</code> permet de diviser une valeur numérique par une autre :</p>
+                    <pre>
+                        <img src="../RAYSOIMAGES/divisionjs.png" alt="divisions">
+
+                    </pre>
+                </section>
+    
+                <section id="modulo">
+                    <h2>Opérateur de Modulo (%)</h2>
+                    <p>L'opérateur de modulo <code>%</code> retourne le reste de la division entre deux valeurs numériques :</p>
+                    <pre>
+                        <img src="../RAYSOIMAGES/modulojs.png" alt="modulos">
+
+                    </pre>
+                </section>
+    
+                <section id="puissance">
+                    <h2>Opérateur de Puissance (**)</h2>
+                    <p>L'opérateur de puissance <code>**</code> permet de calculer une exponentiation entre deux valeurs :</p>
+                    <pre>
+                        <img src="../RAYSOIMAGES/puissancejs.png" alt="puissances">
+                    </pre>
+                </section>
+    
+                <section id="assignation">
+                    <h2>Opérateurs d'Assignation Combinés</h2>
+                    <p>En JavaScript, il existe des opérateurs d'assignation combinés qui permettent de raccourcir les expressions :</p>
+                    
+                        <p style="text-align: center;"><strong style="font-size:20px;">let value = 10;</strong></p>
+                        <li>value += 5; // équivalent à value = value + 5; (value devient 15)</li>
+                        <li>value -= 3; // équivalent à value = value - 3; (value devient 12)</li>
+                        <li>value *= 2; // équivalent à value = value * 2; (value devient 24)</li>
+                        <li>value /= 4; // équivalent à value = value / 4; (value devient 6)</li>
+                        <li>value **= 2; // équivalent à value = value ** 2; (value devient 36)</li>
+                        <li>value %= 5; // équivalent à value = value % 5; (value devient 1)</li>
+                    
+                </section>
+            </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Documentation JavaScript</p>
+    </footer>
+</body>
+</html>
