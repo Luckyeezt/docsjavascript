@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation JavaScript</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            color: #f7f7f7;
+            text-align: center;
+        }
+
+        h2{
+            text-align: center;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        li {
+            line-height: 30px;
+        }
+
+        /* Styles pour le menu hamburger */
+        .menu-toggle {
+            display: none; /* Masquer par défaut sur les grands écrans */
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .menu-toggle:hover {
+            background-color: #555;
+        }
+        nav {
+            width: 25%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: black;
+        }
+        nav li:hover {
+            background-color: black;
+        }
+
+        /* Media query pour les petits écrans */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                margin-bottom: 20px;
+                display: none; /* Masquer le menu par défaut sur les petits écrans */
+            }
+            .menu-toggle {
+                display: block; /* Afficher le bouton du menu hamburger */
+            }
+            nav.open {
+                display: block; /* Afficher le menu lorsque le bouton est cliqué */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Javascript - Types de Données</h1>
+    </header>
+
+    <div class="container">
+        <!-- Bouton du menu hamburger -->
+        <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <a href="typesjs.html"> <li>Types de Données</li>
+                <a href="variablesjs.html"> <li>Variables et Assignation</li></a>
+                <a href="operateursjs.html"> <li>Opérateurs Arithmétiques</li></a>
+                <a href="typesconversions.html"> <li>Conversions de Types</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="types">
+                <h2>Les Types de Données en JavaScript</h2>
+                <p>JavaScript prend en charge plusieurs types de données pour représenter différentes formes d'informations. Voici les principaux types de données :</p>
+                <ul>
+                    <li><strong>String :</strong> Représente du texte et est délimité par des guillemets simples <code>''</code> ou doubles <code>""</code>.</li>
+                    <li><strong>Number :</strong> Représente des nombres entiers ou décimaux. Les opérations mathématiques peuvent être effectuées avec ce type.</li>
+                    <li><strong>Boolean :</strong> Représente une valeur logique qui peut être soit <code>true</code> (vrai) soit <code>false</code> (faux). Utilisé dans les expressions conditionnelles.</li>
+                    <li><strong>Undefined :</strong> Indique qu'une variable a été déclarée mais non initialisée. La valeur par défaut est <code>undefined</code>.</li>
+                    <li><strong>Null :</strong> Représente une valeur vide ou nulle intentionnellement assignée. Utile pour réinitialiser des variables ou libérer des valeurs.</li>
+                    <li><strong>Object :</strong> Structure de données complexe permettant de stocker des collections de données (propriétés et méthodes).</li>
+                    <li><strong>Array :</strong> Liste ordonnée d'éléments, indexée à partir de zéro, qui peut contenir des valeurs de différents types.</li>
+                </ul>
+                <img src="../RAYSOIMAGES/types.png" alt="typesimg" />
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Documentation JavaScript</p>
+    </footer>
+
+    <script>
+        // Fonction pour afficher/cacher le menu
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
