@@ -115,25 +115,39 @@
         }
 
         /* Media query pour les petits écrans */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            nav {
-                width: 100%;
-                margin-bottom: 20px;
-                display: none; /* Masquer le menu par défaut sur les petits écrans */
-            }
-            .menu-toggle {
-                display: block; /* Afficher le bouton du menu hamburger */
-            }
-            nav.open {
-                display:flex;
-                flex-direction: column;
-                align-item: center;
-                justify-content: center;
-            }
-        }
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+        margin-bottom: 20px;
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+    }
+    .menu-toggle {
+        display: block; /* Afficher le bouton du menu hamburger */
+    }
+    nav.open {
+        display: flex; /* Utiliser le modèle flexbox lorsque le menu est ouvert */
+        flex-direction: column; /* Empiler les éléments verticalement */
+        justify-content: center; /* Centrer verticalement les éléments */
+        align-items: center; /* Centrer horizontalement les éléments */
+    }
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+    nav li {
+        margin-bottom: 10px;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 25px;
+        padding: 10px;
+        cursor: pointer;
+        width: 80%; /* Ajuster la largeur des li pour les centrer correctement */
+        max-width: 200px; /* Définir une largeur maximale pour éviter le débordement */
+    }
+}
     </style>
 </head>
 <body>
