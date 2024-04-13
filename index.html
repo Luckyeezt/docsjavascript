@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction à JavaScript</title>
-     <style>
+    <style>
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -26,70 +26,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        main {
-            width: 75%;
-            padding: 20px;
-            background-color: #ccc;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #f7f7f7;
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
-            clear: both;
-        }
-        h2 {
-            text-align: center;
-        }
-        img {
-            max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
-            height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
-            display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
-            margin: 0 auto; /* Centre l'image horizontalement */
-        }
-
-        section {
-            background-color: #ffffff; /* Couleur de fond */
-            border-radius: 8px; /* Coins arrondis */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
-            padding: 20px; /* Espacement intérieur */
-            margin-bottom: 20px; /* Marge inférieure */
-        }
-
-        #assignation li {
-            margin-bottom: 5px;
-            padding: 5px;
-            border: 1px solid black;
-            border-radius: 15px;
-            text-align: center;
-            list-style: none;
-}
-
-        @media (max-width: 768px) {
-            nav {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            main {
-                width: 100%;
-            }
-            img {
-                max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
-                height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
-                display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
-                margin: 20px auto; /* Centre l'image horizontalement avec un espace supplémentaire */
-            }
-            .container {
-                flex-direction: column;
-            }
-}
-nav {
+        nav {
             width: 25%;
             background-color: #f5f5f5;
             padding: 20px;
@@ -119,6 +56,7 @@ nav {
             color: #333;
             font-weight: bold;
             transition: color 0.3s ease;
+            display: block;
         }
         nav a:hover {
             color: #fff;
@@ -127,35 +65,65 @@ nav {
         nav li:hover {
             background-color: black;
         }
+        main {
+            width: 75%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: justify;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-        <header>
-        <h1>Javascript - Les Opérateurs Arithmétiques</h1>
+    <header>
+        <h1>Introduction à JavaScript</h1>
     </header>
 
     <div class="container">
         <nav>
             <h2>Menu</h2>
             <ul>
-                <a href="typesjs.html"><li>Types de Données</li></a>
-                <a href="variablesjs.html"><li>Variables et Assignation</li></a>
-                <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
-                <a href="typesconversions.html"><li>Conversions de Types</li></a>
+                <li><a href="typesjs.html">Types de Données</a></li>
+                <li><a href="variablesjs.html">Variables et Assignation</a></li>
+                <li><a href="operateursjs.html">Opérateurs Arithmétiques</a></li>
+                <li><a href="typesconversions.html">Conversions de Types</a></li>
             </ul>
         </nav>
-    <div class="container2">
-        <h1>Introduction à JavaScript</h1>
-        <p>JavaScript est un langage de programmation utilisé pour rendre les pages web interactives.</p>
-        <p>Avec JavaScript, vous pouvez :</p>
-        <ul style="text-align: left;">
-            <li>Modifier le contenu HTML d'une page</li>
-            <li>Modifier le style CSS d'une page</li>
-            <li>Réagir aux actions de l'utilisateur (clics, survols, etc.)</li>
-            <li>Envoyer des requêtes HTTP pour récupérer des données</li>
-            <li>Manipuler et traiter des données</li>
-        </ul>
-        <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide">Apprendre JavaScript sur MDN</a>
+
+        <main>
+            <h2>Qu'est-ce que JavaScript ?</h2>
+            <p>JavaScript est un langage de programmation utilisé pour rendre les pages web interactives. Il est principalement utilisé pour manipuler le contenu HTML, le style CSS et interagir avec l'utilisateur.</p>
+            <p>Avec JavaScript, vous pouvez :</p>
+            <ul>
+                <li>Modifier le contenu HTML d'une page</li>
+                <li>Modifier le style CSS d'une page</li>
+                <li>Réagir aux actions de l'utilisateur (clics, survols, etc.)</li>
+                <li>Envoyer des requêtes HTTP pour récupérer des données</li>
+                <li>Manipuler et traiter des données</li>
+            </ul>
+            <p>Pour en savoir plus sur JavaScript, vous pouvez consulter la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide">documentation officielle de MDN</a>.</p>
+        </main>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Introduction à JavaScript</p>
+    </footer>
 </body>
 </html>
