@@ -185,7 +185,7 @@
 </head>
 <body>
     <header>
-        <h1>Javascript - Les instructions conditionnelles</h1>
+        <h1>Javascript - Les contrôles d'états</h1>
     </header>
     <button id="scrollToTopBtn" onclick="scrollToTop()" title="Retour en haut">Retour en haut</button>
     <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
@@ -244,7 +244,7 @@
             <section id="elseif">
                 <h2>Le mot-clé "else if"</h2>
                 <p>Le mot-clé <code>else if</code> permet de spécifier une nouvelle condition si la première condition de l'<code>if</code> est fausse. Voici un exemple :</p>3
-                <img src="../RAYSOIMAGES/conditionelseif.png">
+                <img src="../RAYSOIMAGES/conditionelseifjs.png">
                 <ul>
                     <li>L'instruction else if permet d'ajouter des conditions supplémentaires à une structure conditionnelle if...else. Elle est utilisée lorsque vous avez besoin de tester plusieurs conditions consécutives.</li>
                 </ul>
@@ -255,12 +255,35 @@
                 <p>L'opérateur ternaire, également appelé opérateur conditionnel, permet d'exécuter un bloc de code en fonction d'une condition donnée. Il s'agit d'un raccourci pour écrire des instructions conditionnelles.</p>
                 <img src="../RAYSOIMAGES/ternaryoperatorjs.png">
                 <ul>
-                    <li>Syntaxe : variable nomdeVariable = condition ? codesivrai : codesifaux</li>
+                    <li>Syntaxe : condition ? expressionSiVrai : expressionSiFaux;</li>
                     <li>L'opérateur ternaire se compose des éléments suivants :</li>
                     <ul>
                         <li><code>condition</code> : Une expression évaluée comme vraie ou fausse.</li>
                         <li><code>expressionSiVrai</code> : L'expression ou le bloc de code exécuté si la condition est vraie.</li>
                         <li><code>expressionSiFaux</code> : L'expression ou le bloc de code exécuté si la condition est fausse.</li>
+                    </ul>
+            </section>
+
+            <section id="switch">
+                <h2>La fonction switch()</h2>
+                <p>La fonction `switch()` permet d'évaluer une expression et d'exécuter différents blocs de code en fonction de la valeur de cette expression. Voici un exemple :</p>
+                <img src="../RAYSOIMAGES/switchjs.png">
+                <ul>
+                    <li>Syntaxe :
+<pre>
+switch(expression) {
+    case valeur1/condition1:
+        // Bloc de code à exécuter si 
+        // expression est égale à la 
+        // valeur.
+    break;
+</pre></li>
+                    <li>La fonction switch() se compose des éléments suivants :</li>
+                    <ul>
+                        <li><code>case ... : </code> : la valeur de la variable .</li>
+                        <li><code>{...}</code> : le bloc de code exécuté si la valeur correspond.</li>
+                        <li><code>break;</code> : L'expression pour sortir du code</li>
+                        <li>On peut utilisé <code>default : { bloc de code }</code> à la fin du switch pour éxécuté un code si aucune case ne correspond à la valeur.</li>
                     </ul>
             </section>
         </main>
