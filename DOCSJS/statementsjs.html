@@ -197,19 +197,20 @@
                 <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
                 <a href="typesconversions.html"><li>Conversions de Types</li></a>
                 <a href="mathsfunctionsjs.html"><li>Les fonctions Math()</li></a>
-                <a href="statementsjs.html"><li>Les contrôles d'états (if / else / else if)</li></a>
+                <a href="statementsjs.html"><li>Les instructions conditionnelles</li></a>
             </ul>
         </nav>
 
         <main>
             <section id="controlsflow">
-                <h2>Les Contrôles d'états en JavaScript</h2>
+                <h2>Les Instructions Conditionnelles en JavaScript</h2>
                 <p>Les contrôles d'états (if / else / else if) permettent de prendre des décisions conditionnelles dans JavaScript. Ils permettent d'exécuter différentes parties de code en fonction de conditions spécifiques.</p>
                 <p>Voici les principaux mots-clés utilisés pour les contrôles d'états :</p>
                 <ul>
                     <li><button class="typebutton" onclick="goTo(1)">if :</button> Utilisé pour exécuter un bloc de code si une condition est vraie.</li>
                     <li><button class="typebutton" onclick="goTo(2)">else :</button> Utilisé pour exécuter un bloc de code si la condition de l'<code>if</code> est fausse.</li>
                     <li><button class="typebutton" onclick="goTo(3)">else if :</button> Utilisé pour spécifier une nouvelle condition si la première condition de l'<code>if</code> est fausse.</li>
+                    <li><button class="typebutton" onclick="goTo(4)">Opérateur Ternaire :</button> Utilisé pour exécuter un bloc de code en fonction de différentes conditions.</li>
                 </ul>
             </section>
 
@@ -243,17 +244,25 @@
             <section id="elseif">
                 <h2>Le mot-clé "else if"</h2>
                 <p>Le mot-clé <code>else if</code> permet de spécifier une nouvelle condition si la première condition de l'<code>if</code> est fausse. Voici un exemple :</p>3
-                <img src="../RAYSOIMAGES/conditionelseif.png">
+                <img src="../RAYSOIMAGES/conditionelseifjs.png">
                 <ul>
-                     <li>Syntaxe : <pre>if(condition){
-    bloc de code à effectuer
-} else if(condition){
-    bloc de code à effectuer
-} else {
-    bloc de code à effectuer
-}</pre></li>
                     <li>L'instruction else if permet d'ajouter des conditions supplémentaires à une structure conditionnelle if...else. Elle est utilisée lorsque vous avez besoin de tester plusieurs conditions consécutives.</li>
                 </ul>
+            </section>
+
+            <section id="ternary-operator">
+                <h2>L'Opérateur Ternaire</h2>
+                <p>L'opérateur ternaire, également appelé opérateur conditionnel, permet d'exécuter un bloc de code en fonction d'une condition donnée. Il s'agit d'un raccourci pour écrire des instructions conditionnelles.</p>
+                <img src="../RAYSOIMAGES/ternaryoperatorjs.png">
+                <ul>
+                    <li>Syntaxe :</li>
+                    <pre>condition ? expressionSiVrai : expressionSiFaux;</pre>
+                    <li>L'opérateur ternaire se compose des éléments suivants :</li>
+                    <ul>
+                        <li><code>condition</code> : Une expression évaluée comme vraie ou fausse.</li>
+                        <li><code>expressionSiVrai</code> : L'expression ou le bloc de code exécuté si la condition est vraie.</li>
+                        <li><code>expressionSiFaux</code> : L'expression ou le bloc de code exécuté si la condition est fausse.</li>
+                    </ul>
             </section>
         </main>
     </div>
@@ -277,8 +286,10 @@
                     window.location.href="#else";
                     break;
                 case 3 : 
-                    window.location.href="#elseif"
+                    window.location.href="#elseif";
                     break;
+                case 4 :
+                    window.location.href="#ternary-operator";
             }
         }
 
