@@ -105,13 +105,67 @@
         nav li:hover {
             background-color: black;
         }
+        .menu-toggle {
+    display: none; /* Masquer par défaut sur les grands écrans */
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.menu-toggle:hover {
+    background-color: #555;
+}
+
+/* Styles pour les écrans de taille maximale de 768px (petits écrans) */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Occuper toute la largeur disponible */
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton du menu hamburger */
+    }
+
+    nav.open {
+        width: 95%;
+        margin-bottom: 10px;
+        display: block; /* Afficher le menu lorsque le bouton est cliqué */
+    }
+    
+    main {
+        display: block;
+        width: 95%;
+    }
+
+    .container {
+        display: block;
+    }
+    
+    .menu-list {
+        display: block;
+    }
+
+    nav li {
+        padding: 8px;
+        border-radius: 0px;
+    }
+
+    nav a:hover {
+        border-radius: 0px;;
+    }
+
+}
     </style>
 </head>
 <body>
     <header>
         <h1>Javascript - Types de Données</h1>
     </header>
-
+    <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
     <div class="container">
         <nav>
             <ul>
@@ -146,6 +200,10 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+        }
     </script>
 </body>
 </html>
