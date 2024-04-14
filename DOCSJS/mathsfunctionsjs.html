@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation JavaScript</title>
     <style>
-body {
+        body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -33,16 +33,15 @@ body {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #f7f7f7;
+        h1, h2 {
             text-align: center;
         }
         pre {
             background-color: #f5f5f5;
-            padding: 4px;
+            padding: 10px;
             border-radius: 8px;
             overflow-x: auto;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         footer {
             text-align: center;
@@ -51,21 +50,19 @@ body {
             color: #fff;
             clear: both;
         }
-        h2 {
-            text-align: center;
-        }
         img {
-            max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
-            height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
-            display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
-            margin: 0 auto; /* Centre l'image horizontalement */
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
         }
         section {
-            background-color: #ffffff; /* Couleur de fond */
-            border-radius: 8px; /* Coins arrondis */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
-            padding: 20px; /* Espacement intérieur */
-            margin-bottom: 20px; /* Marge inférieure */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
         }
         nav {
             width: 25%;
@@ -97,12 +94,11 @@ body {
             color: #333;
             font-weight: bold;
             transition: color 0.3s ease;
+            display: block;
+            border-radius: 25px;
         }
         nav a:hover {
             color: #fff;
-            background-color: black;
-        }
-        nav li:hover {
             background-color: black;
         }
         .typebutton {
@@ -135,6 +131,61 @@ body {
             opacity: 0.8;
         }
 
+        .menu-toggle {
+            display: none; /* Masquer par défaut sur les grands écrans */
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 20px;
+       }
+        .menu-toggle:hover {
+            background-color: #555;
+        }
+
+/* Styles pour les écrans de taille maximale de 768px (petits écrans) */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Occuper toute la largeur disponible */
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton du menu hamburger */
+    }
+
+    nav.open {
+        width: 95%;
+        margin-bottom: 10px;
+        display: block; /* Afficher le menu lorsque le bouton est cliqué */
+    }
+    
+    main {
+        display: block;
+        width: 95%;
+    }
+
+    .container {
+        display: block;
+    }
+    
+    .menu-list {
+        display: block;
+    }
+
+    nav li {
+        padding: 8px;
+        border-radius: 0px;
+    }
+
+    nav a:hover {
+        border-radius: 0px;;
+    }
+
+}
+
     </style>
 </head>
 <body>
@@ -143,9 +194,11 @@ body {
     </header>
     <button id="scrollToTopBtn" onclick="scrollToTop()" title="Retour en haut">Retour en haut</button>
 
+    <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+
     <div class="container">
         <nav>
-            <ul>
+            <ul class="menu-list">
                 <a href="typesjs.html"><li>Types de Données</li></a>
                 <a href="variablesjs.html"><li>Variables et Assignation</li></a>
                 <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
@@ -397,6 +450,11 @@ body {
             document.body.scrollTop = 0; // Pour les navigateurs Safari
             document.documentElement.scrollTop = 0; // Pour les autres navigateurs
         }
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+}
 
     </script>
 </body>
