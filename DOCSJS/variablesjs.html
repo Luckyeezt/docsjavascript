@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation JavaScript</title>
     <style>
-body {
+       body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -105,35 +105,6 @@ body {
         nav li:hover {
             background-color: black;
         }
-        .typebutton {
-            border-radius: 5px;
-            font-weight: bold;
-            border: 1px solid black;
-            cursor: pointer;
-            background-color: #ccc;
-            font-size: 15px;
-            padding: 5px;
-        }
-        #scrollToTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 99;
-            font-size: 16px;
-            border: none;
-            outline: none;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 10px;
-            transition: opacity 0.3s;
-        }
-
-        #scrollToTopBtn:hover {
-            opacity: 0.8;
-        }
         .menu-toggle {
     display: none; /* Masquer par défaut sur les grands écrans */
     cursor: pointer;
@@ -188,18 +159,16 @@ body {
     }
 
 }
-
     </style>
 </head>
 <body>
     <header>
-        <h1>Javascript - Les fonctions intégrés Maths()</h1>
+        <h1>Javascript - Les Variables</h1>
     </header>
     <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
-    <button id="scrollToTopBtn" onclick="scrollToTop()" title="Retour en haut">Retour en haut</button>
-
     <div class="container">
         <nav>
+            <h2>Menu</h2>
             <ul>
                 <a href="typesjs.html"><li>Types de Données</li></a>
                 <a href="variablesjs.html"><li>Variables et Assignation</li></a>
@@ -211,253 +180,82 @@ body {
 
         <main>
             <section id="types">
-                <h2>Les fonctions intégrés Maths()</h2>
-                <p>Les fonctions mathématiques fournies par JavaScript via l'objet Math sont des outils puissants pour effectuer diverses opérations mathématiques en programmation. Elles permettent d'effectuer des calculs avancés et des manipulations numériques directement dans vos programmes JavaScript :</p>
+                <h2>Les Variables en JavaScript</h2>
+                <p>En JavaScript, il existe trois façons de déclarer une variable, chacune peut stocker n'importe quel <a href="typesjs.html">type de données</a> :</p>
                 <ul>
-                    <li><button class="typebutton" onclick="goTo(1)">Math.PI :</button> Cette constante représente la valeur de Pi (π), qui est le rapport entre la circonférence d'un cercle et son diamètre.</li>
-                    <li><button class="typebutton" onclick="goTo(2)">Math.E :</button> La fonction Math.E() en JavaScript renvoie la constante mathématique "e", qui est la base du logarithme naturel.</li>
-                    <li><button class="typebutton" onclick="goTo(3)">Math.round() :</button> Arrondit un nombre à l'entier le plus proche.</li>
-                    <li><button class="typebutton" onclick="goTo(4)">Math.floor() :</button> Arrondit un nombre à l'entier inférieur le plus proche.</li>
-                    <li><button class="typebutton" onclick="goTo(5)">Math.ceil() :</button> Arrondit un nombre à l'entier supérieur le plus proche.</li>
-                    <li><button class="typebutton" onclick="goTo(6)">Math.abs() :</button> Retourne la valeur absolue d'un nombre.</li>
-                    <li><button class="typebutton" onclick="goTo(7)">Math.pow() :</button> Calcule la puissance d'un nombre.</li>
-                    <li><button class="typebutton" onclick="goTo(8)">Math.sqrt() :</button> Calcule la racine carrée d'un nombre.</li>
-                    <li><button class="typebutton" onclick="goTo(9)">Math.sin() :</button> Calcule le sinus d'un nombre.</li>
-                    <li><button class="typebutton" onclick="goTo(10)">Math.cos() :</button> Calcule le cosinus d'un nombre.</li>
-                    <li><button class="typebutton" onclick="goTo(11)">Math.tan() :</button> Calcule la tangente d'un nombre.</li>
-                    <li><button class="typebutton" onclick="goTo(12)">Math.random() :</button> Retourne un nombre aléatoire entre x et y.</li>
-                    <li><button class="typebutton" onclick="goTo(13)">Math.min() :</button> Retourne le nombre minimum d'une "liste".</li>
-                    <li><button class="typebutton" onclick="goTo(14)">Math.max() : </button> Retourne le nombre maximum d'une "liste".</li>
+                    <li><strong>const :</strong> C'est une variable à laquelle nous ne pourrons jamais changer sa valeur.</li>
+                    <li><strong>let :</strong> C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
+                    <li><strong>var :</strong> C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
                 </ul>
             </section>
 
-            <section id="pi">
-                <h2>La fonction Math.PI</h2>
-                <p>La fonction <code>Math.PI</code> est une méthode de l'objet Math qui renvoie la valeur de Pi (π), une constante mathématique définie comme le rapport de la circonférence d'un cercle à son diamètre. Sa valeur est approximativement égale à 3.141592653589793.</p>
-                <h3>Exemple : Calcul de la circonférence d'un cercle :</h3>
-                <img src="../RAYSOIMAGES/mathpijs.png">
-                <p><code>Math.PI</code> est souvent utilisé dans des formules impliquant l'utilisation du nombre PI comme par exemple :</p>
-                <ul>
-                    <li>Circonférence d'un cercle : 2 x Math.PI x rayon</li>
-                    <li>Aire d'un cercle : Math.PI x rayon**2</li>
-                    <li>Volume d'une sphère</li>
-                </ul>
+            <section id="utils">
+                <h2>Étapes de création d'une variable :</h2>
+                <ol>
+                    <li>
+                        <strong>Ajout du mot clé de la variable :</strong>
+                        <ul>
+                            <li><strong>const :</strong> Déclare une variable avec une valeur constante.</li>
+                            <pre>       const nomDeVariable = valeur;</pre>
+                            <li><strong>let :</strong> Déclare une variable avec une valeur modifiable.</li>
+                            <pre>       let nomDeVariable = valeur;</pre>
+                            <li><strong>var :</strong> Déclare une variable avec une portée globale ou de fonction.</li>
+                            <pre>       var monNomDeVariable = valeur;</pre>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Le nom de la variable :</strong>
+                        <ul>
+                            <li><strong>camelCase :</strong> Notation où la première lettre de chaque mot (sauf le premier) est en majuscule.</li>
+                            <pre>       let produitVaisselle;</pre>
+                            <li><strong>snake_case :</strong> Notation où les mots sont séparés par des underscores "_".</li>
+                            <pre>       let _produit;</pre>
+                            <pre>       let produit_vaisselle;</pre>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Le signe d'assignement :</strong>
+                        <ul>
+                            <li><strong>le signe égal : </strong> Utilisé pour assigner une valeur à une variable.</li>
+                            <pre>       let _produit = "MIR";</pre>
+                            <pre>       let prix_produit = 10;</pre>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>La valeur de la variable :</strong>
+                        <ul>
+                            <li><strong>données :</strong> Peut être un tableau, un nombre, un booléen, une chaîne de caractères, etc.</li>
+                            <pre>       let _produit = "MIR";</pre>
+                            <pre>       let prix_produit = 10;</pre>
+                        </ul>
+                    </li>
+                </ol>
             </section>
 
-            <section id="e">
-                <h2>La fonction Math.E</h2>
-                <p>La fonction <code>Math.E</code> est une méthode de l'objet Math qui renvoie la valeur de "e" qui est la constante d'Euler, la base du logarithme naturel. Sa valeur est approximativement égale à 2.718281828459045.</p>
-                <h3>Exemple : Calcul de l'exponentielle d'un nombre :</h3>
-                <img src="../RAYSOIMAGES/mathejs.png">
-                <p><code>Math.E</code> vous permet d'accéder facilement à la valeur de la constante "e" pour effectuer divers calculs mathématiques impliquant des fonctions exponentielles et des logarithmes naturels.</p>
+            <section id="const">
+                <h2>Utilisation d'une variable const</h2>
+                <p>La variable <code>const</code> est utilisée pour déclarer des valeurs constantes qui ne peuvent pas être modifiées une fois assignées. Pour les objets et les tableaux déclarés avec <code>const</code>, leurs propriétés ou éléments peuvent cependant être modifiés.</p>
+                <img src="../RAYSOIMAGES/constjs.png">
             </section>
 
-            <section id="round">
-                <h2>La fonction Math.round()</h2>
-                <p>La fonction <code>Math.round()</code> est une méthode de l'objet Math en JavaScript qui permet d'arrondir un nombre à l'entier le plus proche. Dans un nombre décimal, c'est à partir du x,5 que l'arrondissement change.</p>
-                <img src="../RAYSOIMAGES/mathroundjs.png">
-                <ul>
-                    <li>Si la partie décimale est inférieure à 0.5, le nombre est arrondi vers le bas (vers l'entier le plus proche inférieur).</li>
-                    <li>Si la partie décimale est supérieure ou égale à 0.5, le nombre est arrondi vers le haut (vers l'entier le plus proche supérieur).</li>
-                    <li>"round" veut dire "rond" en français, donc un nombre arrondi.</li>
-                </ul>
+            <section id="let">
+                <h2>Utilisation d'une variable let</h2>
+                <p>La variable <code>let</code> est utilisée pour déclarer des variables dont la valeur peut être modifiée ultérieurement. Contrairement à <code>const</code>, les variables déclarées avec <code>let</code> peuvent être réassignées.</p>
+                <img src="../RAYSOIMAGES/letjs.png">
             </section>
-
-            <section id="floor">
-                <h2>La fonction Math.floor()</h2>
-                <p>La fonction <code>Math.floor()</code> est une méthode de l'objet Math en JavaScript qui retourne le plus grand entier inférieur ou égal à un nombre donné. Elle permet d'arrondir un nombre décimal vers le bas, en supprimant toute la partie décimal du nombre et en renvoyant l'entier le plus proche qui est inférieur ou égal au nombre d'origine.</p>
-                <img src="../RAYSOIMAGES/mathfloorjs.png">
-                <ul>
-                    <li>"floor" veut dire sol en français, donc le plus bas (nombre)</li>
-                </ul>
-            </section>
-
-            <section id="ceil">
-                <h2>La fonction Math.ceil()</h2>
-                <p>La fonction <code>Math.ceil()</code> est une méthode de l'objet Math en JavaScript qui retourne le plus petit entier supérieur ou égal à un nombre donné. Elle permet d'arrondir un nombre décimal vers le haut, en supprimant toute la partie décimale du nombre et en renvoyant l'entier le plus proche qui est supérieur ou égal au nombre d'origine.</p>
-                <img src="../RAYSOIMAGES/mathceiljs.png">
-                <ul>
-                    <li>Si le nombre contient une quelconque partie décimale, le nombre affiché sera immédiatement le nombre entier supérieur.</li>
-                    <li>"ceil" est l'abbréviation de "CEILing" (plafond en français) donc le plus haut (nombre)</li>
-                </ul>
-            </section>
-
-            <section id="abs">
-                <h2>La fonction Math.abs()</h2>
-                <p>La fonction <code>Math.abs()</code> est une méthode de l'objet Math en JavaScript qui retourne la valeur absolue d'un nombre, c'est-à-dire sa valeur numérique sans tenir compte du signe. Elle permet de transformer un nombre négatif en positif en supprimant le signe négatif, tandis que les nombres positifs restent inchangés.</p>
-                <img src="../RAYSOIMAGES/mathabsjs.png">
-                <ul>
-                    <li>Si le nombre passé en paramètre est négatif, la fonction <code>Math.abs()</code> transforme sa valeur en positif en supprimant le signe "-".</li>
-                    <li>Si le nombre passé en paramètre est positif, la fonction <code>Math.abs()</code> retourne simplement le nombre inchangé.</li>
-                    <li>"abs" veut dire "ABSolute" (nombre absolu en français)</li>
-                </ul>
-            </section>
-
-            <section id="pow">
-                <h2>La fonction Math.pow()</h2>
-                <p>La fonction <code>Math.pow()</code> est une méthode de l'objet Math en JavaScript qui permet de calculer la puissance d'un nombre en utilisant une base et un exposant. Elle prend deux arguments : la base (nombre) et l'exposant (puissance), puis retourne la valeur de la base élevée à la puissance spécifiée.</p>
-                <img src="../RAYSOIMAGES/mathpowjs.png">
-                <ul>
-                    <li>"pow" est l'abréviation de "POWer" (puissance en français)</li>
-                </ul>
-            </section>
-
-            <section id="sqrt">
-                <h2>La fonction Math.sqrt()</h2>
-                <p>La fonction <code>Math.sqrt()</code> est une méthode de l'objet Math en JavaScript qui permet de calculer la racine carrée d'un nombre. Elle prend un seul argument, qui est le nombre dont vous souhaitez calculer la racine carrée, et elle retourne la racine carrée de ce nombre.</p>
-                <img src="../RAYSOIMAGES/mathsqrtjs.png">
-                <ul>
-                    <li>Si le nombre passé en argument est négatif, la fonction <code>Math.sqrt()</code> retournera <code>NaN</code> (Not a Number) car la racine carrée d'un nombre négatif n'est pas un nombre réel dans le domaine des nombres réels.</li>
-                    <li>'sqrt" veux dire "SQuare RooT" (Racine carrée en français)</li>
-                </ul>
-            </section>
-
-            <section id="sin">
-                <h2>La fonction Math.sin()</h2>
-                <p>La fonction <code>Math.sin()</code> est une méthode de l'objet Math en JavaScript qui permet de calculer le sinus d'un nombre. Elle prend un seul argument, qui est l'angle en radians dont vous souhaitez calculer le sinus, et retourne le sinus de cet angle.</p>
-                <img src="../RAYSOIMAGES/mathsinjs.png">
-                <ul>
-                    <li>L'argument passé à <code>Math.sin()</code> est l'angle en radians pour lequel vous souhaitez calculer le sinus.</li>
-                    <li>Le sinus d'un angle dans un triangle rectangle est défini comme le rapport de la longueur du côté opposé à l'angle sur l'hypoténuse du triangle.</li>
-                    <li>'sin" veux dire "sine" (sinus en français).</li>
-                </ul>
-            </section>
-
-            <section id="cos">
-                <h2>La fonction Math.cos()</h2>
-                <p>La fonction <code>Math.cos()</code> est une méthode de l'objet Math en JavaScript qui permet de calculer le cosinus d'un angle en radians. Elle prend un seul argument, qui est l'angle en radians dont vous souhaitez calculer le cosinus, et retourne le cosinus de cet angle.</p>
-                <img src="../RAYSOIMAGES/mathcosjs.png">
-                <ul>
-                    <li>L'argument passé à <code>Math.cos()</code> est l'angle en radians pour lequel vous souhaitez calculer le cosinus.</li>
-                    <li>Le cosinus d'un angle dans un triangle rectangle est défini comme le rapport de la longueur du côté adjacent à l'angle sur l'hypoténuse du triangle.</li>
-                    <li>'cos" signifie "cosine" (cosinus en français).</li>
-                </ul>
-            </section>
-
-            <section id="tan">
-                <h2>La fonction Math.tan()</h2>
-                <p>La fonction <code>Math.tan()</code> est une méthode de l'objet Math en JavaScript qui permet de calculer la tangente d'un angle en radians. Elle prend un seul argument, qui est l'angle en radians dont vous souhaitez calculer la tangente, et retourne la tangente de cet angle.</p>                <img src="../RAYSOIMAGES/mathtanjs.png">
-                <ul>
-                    <li>L'argument passé à <code>Math.tan()</code> est l'angle en radians pour lequel vous souhaitez calculer la tangente.</li>
-                    <li>La tangente d'un angle est le rapport de la longueur du côté opposé à l'angle sur la longueur du côté adjacent dans un triangle rectangle.</li>
-                    <li>'tan" signifie "tangent" (tangente en français).</li>
-                </ul>
-            </section>
-
-            <section id="random">
-                <h2>La fonction Math.random()</h2>
-                <p>La fonction <code>Math.random()</code> est une méthode de l'objet Math en JavaScript qui permet de générer un nombre aléatoire compris entre 0 (inclus) et 1 (exclus). Ce nombre aléatoire est généré de manière pseudo-aléatoire, ce qui signifie qu'il semble être aléatoire mais est déterministe, basé sur une "graine" initiale.</p>
-                <img src="../RAYSOIMAGES/mathrandomjs.png">
-                <ul>
-                    <li>La fonction <code>Math.random()</code> ne prend aucun argument.</li>
-                    <li>La syntaxe doit être comme celle-ci : Math.random() * x (x = nombre,variable,fonction)</li>
-                    <li>Vous pouvez utiliser <code>Math.random()</code> pour créer des valeurs aléatoires dans vos programmes JavaScript.</li>
-                </ul>
-            </section> 
             
-            <section id="min">
-                <h2>La fonction Math.min()</h2>
-                <p>La fonction <code>Math.min()</code> est une méthode de l'objet Math en JavaScript qui permet de trouver le plus petit nombre parmi un ensemble d'arguments ou d'éléments. Elle peut être utilisée pour retourner le nombre le plus petit dans une liste d'arguments ou dans un tableau.</p>
-                <img src="../RAYSOIMAGES/mathminjs.png">
-                <ul>
-                    <li>La fonction <code>Math.min()</code> prend un ou plusieurs arguments numériques.</li>
-                    <li>Elle retourne le plus petit nombre parmi les valeurs fournies en argument.</li>
-                    <li>Si vous fournissez à la fonction <code>Math.min()</code> des valeurs non numériques, elle tentera de les convertir en nombres avant de les comparer.</li>
-                    <li>"min" veut dire minimum (nombre le plus petit)</li>
-                </ul>
-            </section>
-
-            <section id="max">
-                <h2>La fonction Math.max()</h2>
-                <p>La fonction <code>Math.max()</code> est une méthode de l'objet Math en JavaScript qui permet de trouver le plus grand nombre parmi un ensemble d'arguments ou d'éléments. Elle peut être utilisée pour retourner le nombre le plus grand dans une liste d'arguments ou dans un tableau.</p>
-                <img src="../RAYSOIMAGES/mathmaxjs.png">
-                <ul>
-                    <li>La fonction <code>Math.max()</code> prend un ou plusieurs arguments numériques.</li>
-                    <li>Elle retourne le plus grand nombre parmi les valeurs fournies en argument.</li>
-                    <li>Si vous fournissez à la fonction <code>Math.max()</code> des valeurs non numériques, elle tentera de les convertir en nombres avant de les comparer.</li>
-                    <li>"max" veut dire maximum (nombre le plus grand)</li>
-                </ul>
-            </section>
         </main>
     </div>
 
     <footer>
         <p>&copy; 2024 Documentation JavaScript</p>
     </footer>
-
-    <script>
-        function goTo(section){
-            switch(section){
-                case 1:
-                    window.location.href = "#pi";
-                    break;
-                case 2:
-                    window.location.href="#e";
-                    break;
-                case 3:
-                    window.location.href="#round";
-                    break;
-                case 4:
-                    window.location.href="#floor";
-                    break;
-                case 5:
-                    window.location.href="#ceil";
-                    break;
-                case 6:
-                    window.location.href="#abs";
-                    break;
-                case 7:
-                    window.location.href="#pow";
-                    break;
-                case 8:
-                    window.location.href="#sqrt";
-                    break;
-                case 9:
-                    window.location.href="#sin";
-                    break;
-                case 10:
-                    window.location.href="#cos";
-                    break;
-                case 11:
-                    window.location.href="#tan";
-                    break;
-                case 12: 
-                    window.location.href="#random";
-                    break;
-                case 13:
-                    window.location.href="#min";
-                    break;
-                case 14:
-                    window.location.href="#max";
-                    break;
-            }
-        }
-
-        // Fonction pour afficher ou masquer le bouton en fonction du défilement de la page
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
-        }
-
-        // Fonction pour faire défiler la page vers le haut lorsque le bouton est cliqué
-        function scrollToTop() {
-            document.body.scrollTop = 0; // Pour les navigateurs Safari
-            document.documentElement.scrollTop = 0; // Pour les autres navigateurs
-        }
-
+        <script>
+        // Fonction pour afficher/cacher le menu
         function toggleMenu() {
             var nav = document.querySelector('nav');
             nav.classList.toggle('open');
         }
-
     </script>
 </body>
 </html>
