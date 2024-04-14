@@ -217,7 +217,9 @@
                     <li><button class="typebutton" onclick="goTo(3)">Math.round() :</button> Arrondit un nombre à l'entier le plus proche.</li>
                     <li><button class="typebutton" onclick="goTo(4)">Math.floor() :</button> Arrondit un nombre à l'entier inférieur le plus proche.</li>
                     <li><button class="typebutton" onclick="goTo(5)">Math.ceil() :</button> Arrondit un nombre à l'entier supérieur le plus proche.</li>
+                    <li><button class="typebutton" onclick="goTo(15)">Math.trunc() :</button> Enlève la partie décimale d'un nombre.</li>
                     <li><button class="typebutton" onclick="goTo(6)">Math.abs() :</button> Retourne la valeur absolue d'un nombre.</li>
+                    <li><button class="typebutton" onclick="goTo(16)">Math.sign() :</button> Renvoie un 1 ou -1 selon si le nombre est négatif ou positif.</li>
                     <li><button class="typebutton" onclick="goTo(7)">Math.pow() :</button> Calcule la puissance d'un nombre.</li>
                     <li><button class="typebutton" onclick="goTo(8)">Math.sqrt() :</button> Calcule la racine carrée d'un nombre.</li>
                     <li><button class="typebutton" onclick="goTo(9)">Math.sin() :</button> Calcule le sinus d'un nombre.</li>
@@ -280,6 +282,18 @@
                 </ul>
             </section>
 
+            <section id="trunc">
+                <h2>La fonction Math.trunc()</h2>
+                <p>La fonction <code>Math.trunc()</code> est une méthode de l'objet Math en JavaScript qui retourne la partie entière d'un nombre en supprimant la partie décimale. Elle permet de tronquer un nombre décimal pour ne conserver que sa partie entière, en ignorant les décimales.</p>
+                <img src="../RAYSOIMAGES/mathtruncjs.png">
+                <ul>
+                    <li>La fonction <code>Math.trunc()</code> supprime toute la partie décimale d'un nombre et renvoie la partie entière restante.</li>
+                    <li>Si le nombre est positif, <code>Math.trunc()</code> est équivalent à la fonction <code>Math.floor()</code> car elle arrondit vers zéro.</li>
+                    <li>Si le nombre est négatif, <code>Math.trunc()</code> arrondit vers le plus grand entier absolu.</li>
+                    <li>"trunc" veut dire "TRUNCation" (tronquation en français)</li>
+                </ul>
+            </section>            
+
             <section id="abs">
                 <h2>La fonction Math.abs()</h2>
                 <p>La fonction <code>Math.abs()</code> est une méthode de l'objet Math en JavaScript qui retourne la valeur absolue d'un nombre, c'est-à-dire sa valeur numérique sans tenir compte du signe. Elle permet de transformer un nombre négatif en positif en supprimant le signe négatif, tandis que les nombres positifs restent inchangés.</p>
@@ -288,6 +302,18 @@
                     <li>Si le nombre passé en paramètre est négatif, la fonction <code>Math.abs()</code> transforme sa valeur en positif en supprimant le signe "-".</li>
                     <li>Si le nombre passé en paramètre est positif, la fonction <code>Math.abs()</code> retourne simplement le nombre inchangé.</li>
                     <li>"abs" veut dire "ABSolute" (nombre absolu en français)</li>
+                </ul>
+            </section>
+
+            <section id="sign">
+                <h2>La fonction Math.sign()</h2>
+                <p>La fonction <code>Math.sign()</code> est une méthode de l'objet Math en JavaScript qui permet de déterminer le signe d'un nombre fourni en argument. Elle retourne :</p>
+                <img src="../RAYSOIMAGES/mathsignjs.png">
+                <ul>
+                    <li><code>1</code> si le nombre est positif ou <code>0</code> (zéro positif).</li>
+                    <li><code>-1</code> si le nombre est négatif ou <code>-0</code> (zéro négatif).</li>
+                    <li><code>NaN</code> si le nombre fourni est <code>NaN</code> (Not a Number).</li>
+                    <li>"sign" veut dire "signe" en anglais (donc moins (négatif) ou plus (positif))
                 </ul>
             </section>
 
@@ -427,6 +453,12 @@
                     break;
                 case 14:
                     window.location.href="#max";
+                    break;
+                case 15:
+                    window.location.href="#trunc"
+                    break;
+                case 16:
+                    window.location.href="#sign"
                     break;
             }
         }
