@@ -173,7 +173,9 @@
             img {
                 display: none;
             }
-        }
+            .container {
+               width: 100%;
+        }}
 
         /* Styles pour le mode sombre */
         .dark-mode {
