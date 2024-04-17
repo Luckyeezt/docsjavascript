@@ -48,18 +48,25 @@
             font-family: Helvetica, sans-serif;
         }
 
-        main {
-            display: flex;
-            flex: 1;
-        }
+ main {
+        display: flex;
+        flex: 1;
+        overflow-y: auto; /* Permet le défilement du contenu principal */
+        margin-top: 122px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
+      }
 
-        nav {
-            background-color: #333;
-            color: white;
-            width: 250px;
-            padding: 20px;
-            display: block;
-        }
+nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 325px;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        margin-top: 122px;
+        height: 100vh; /* Calcul de la hauteur maximale moins la hauteur du header */
+        overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
+      }
 
         nav ul {
             list-style: none;
@@ -124,12 +131,46 @@
             display: none; /* Cacher le bouton par défaut sur les grands écrans */
         }
 
-        .container {
-            max-width: 1200px;
-            margin-left: 10%;
-            margin-top: 20px;
-            padding: 0 20px;
-        }
+      .container {
+        margin-left: 30%;
+        margin-top: 20px;
+        padding: 0 20px;
+        width: 60%;
+        border-radius: 10px;
+      }
+      .container section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .container section h2 {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 10px;
+      }
+
+      .container section ul {
+        list-style: none;
+      }
+
+      .container section ul li {
+        margin-bottom: 8px;
+      }
+
+      .container section button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 10px;
+      }
         /* Styles pour le mode sombre */
         .toggleDarkButton {
             background-color: black;
@@ -150,10 +191,6 @@
             content: "\1F319"; /* Symbole de la lune (code Unicode complet) */
             margin-left: 5px;
         }
-
-            .container {
-                        margin-right: 300px;
-            }
 
         @media (max-width: 768px) {
             header .hamburger {
