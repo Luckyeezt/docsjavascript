@@ -52,7 +52,7 @@
         display: flex;
         flex: 1;
         overflow-y: auto; /* Permet le défilement du contenu principal */
-        margin-top: 122px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
+        margin-top: 25px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
       }
 
 nav {
