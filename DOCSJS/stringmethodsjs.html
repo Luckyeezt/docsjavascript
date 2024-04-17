@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation JavaScript</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        main {
+            width: 75%;
+            padding: 20px;
+            background-color: #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        nav {
+            width: 25%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: block;
+            border-radius: 25px;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: black;
+        }
+        .typebutton {
+            border-radius: 5px;
+            font-weight: bold;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: #ccc;
+            font-size: 15px;
+            padding: 5px;
+        }
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            opacity: 0.8;
+        }
+
+        .menu-toggle {
+            display: none; /* Masquer par défaut sur les grands écrans */
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 20px;
+       }
+        .menu-toggle:hover {
+            background-color: #555;
+        }
+
+/* Styles pour les écrans de taille maximale de 768px (petits écrans) */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Occuper toute la largeur disponible */
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton du menu hamburger */
+    }
+
+    nav.open {
+        width: 95%;
+        margin-bottom: 10px;
+        display: block; /* Afficher le menu lorsque le bouton est cliqué */
+    }
+    
+    main {
+        display: block;
+        width: 95%;
+    }
+
+    .container {
+        display: block;
+    }
+    
+    .menu-list {
+        display: block;
+    }
+
+    nav li {
+        padding: 8px;
+        border-radius: 0px;
+    }
+
+    nav a:hover {
+        border-radius: 0px;;
+    }
+
+}
+.container1 {
+            display: flex;
+            justify-content: flex-start; /* Aligner les éléments à gauche */
+            align-items: stretch; /* Étirer les éléments pour occuper toute la hauteur */
+            width: 95%; /* Largeur du conteneur principal */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère pour le conteneur */
+            border-radius: 5px;
+            overflow: hidden; /* Masquer le contenu qui dépasse */
+        }
+
+        .toolbar {
+            background-color: #282a36; /* Couleur de fond de la barre d'outils */
+            display: flex;
+            flex-direction: column; /* Aligner les éléments en colonne */
+            align-items: flex-start; /* Aligner les éléments à gauche */
+            padding: 10px; /* Ajouter un peu de marge intérieure */
+            width: 100px; /* Largeur de la barre d'outils */
+        }
+
+        .toolbar button {
+            background: #282a38;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #ffffff; /* Couleur du texte des boutons */
+            margin-bottom: 10px; /* Espacement entre les boutons */
+            width: 80px; /* Largeur des boutons */
+            text-align: center; /* Centrer le texte horizontalement */
+            padding: 8px;
+            border-radius: 5px;
+            position: relative; /* Position relative pour la bordure */
+        }
+
+        .toolbar button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -5px; /* Décaler la bordure à droite */
+            height: 100%;
+            width: 1px; /* Largeur de la bordure */
+            background-color: rgba(255, 255, 255, 0.3); /* Couleur de la bordure */
+            transition: width 0.3s ease; /* Animation de transition */
+            opacity: 0; /* Masquer la bordure par défaut */
+        }
+
+        .toolbar button:hover::after {
+            width: 5px; /* Afficher la bordure au survol */
+            opacity: 1; /* Afficher la bordure au survol */
+        }
+
+        .code-box {
+            background-color: #282a36; /* Couleur de fond de la boîte de code */
+            color: #ffffff; /* Couleur du texte */
+            padding: 5px;
+            line-height: 1.5;
+            flex: 1; /* Permettre à la boîte de code de prendre l'espace restant */
+            border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+            overflow: auto; /* Ajouter un défilement si nécessaire */
+            position: relative; /* Position relative pour les numéros de ligne */
+        }
+
+        #code-content {
+            font-family: 'Lucida Console', monospace;
+            font-size: 15px; /* Taille de police pour le code */
+            white-space: pre-wrap;
+            overflow-x: auto;
+            padding: 10px;
+            border-radius: 5px;
+            counter-reset: line-number; /* Réinitialiser le compteur de numéros de ligne */
+        }
+
+
+
+
+    </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../tokens.css">
+    </head>
+<body>
+    <header>
+        <h1>Javascript - Les méthodes des chaines de caractères</h1>
+    </header>
+    <button id="scrollToTopBtn" onclick="scrollToTop()" title="Retour en haut">Retour en haut</button>
+    <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+
+    <div class="container">
+        <nav>
+            <ul class="menu-list">
+                <a href="typesjs.html"><li>Types de Données</li></a>
+                <a href="variablesjs.html"><li>Variables et Assignation</li></a>
+                <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
+                <a href="typesconversions.html"><li>Conversions de Types</li></a>
+                <a href="mathsfunctionsjs.html"><li>Les fonctions Math()</li></a>
+                <a href="statementsjs.html"><li>Les instructions conditionnelles</li></a>
+                <a href="stringmethodsjs.html"><li>Les méthodes des chaines de caractères</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="stringMethods">
+                <h2>Méthodes de Manipulation de Chaînes</h2>
+                <p>Voici les méthodes les plus couramment utilisées pour manipuler des chaînes de caractères en JavaScript :</p>
+                <ul>
+                    <li><strong>length</strong> : Retourne la longueur d'une chaîne de caractères.</li>
+                    <li><strong>charAt()</strong> : Retourne le caractère à l'index spécifié.</li>
+                    <li><strong>indexOf()</strong> : Retourne l'index de la première occurrence de la chaîne spécifiée.</li>
+                    <li><strong>lastIndexOf()</strong> : Retourne l'index de la dernière occurrence de la chaîne spécifiée.</li>
+                    <li><strong>toLowerCase()</strong> : Convertit une chaîne de caractères en minuscules.</li>
+                    <li><strong>toUpperCase()</strong> : Convertit une chaîne de caractères en majuscules.</li>
+                    <li><strong>trim()</strong> : Supprime les espaces blancs au début et à la fin d'une chaîne de caractères.</li>
+                    <li><strong>repeat()</strong> : </li>
+                    <li><strong>substring()</strong> : Retourne une sous-chaîne en fonction des index de début et de fin spécifiés.</li>
+                    <li><strong>replace()</strong> : Remplace une partie d'une chaîne par une autre.</li>
+                    <li><strong>split()</strong> : Divise une chaîne en un tableau de sous-chaînes en utilisant un séparateur spécifié.</li>
+                    <li><strong>concat()</strong> : Concatène deux chaînes de caractères.</li>
+                </ul>
+            </section>
+
+            <section id="pi">
+                <h2>La fonction Math.PI</h2>
+                <p>La fonction <code>Math.PI</code> est une méthode de l'objet Math qui renvoie la valeur de Pi (π), une constante mathématique définie comme le rapport de la circonférence d'un cercle à son diamètre. Sa valeur est approximativement égale à 3.141592653589793.</p>
+                <h3>Exemple : Calcul de la circonférence d'un cercle :</h3>
+                <div class="container1">
+                    <div class="toolbar">
+                        <button id="play-btn" onclick="alert('Console : 31.41592653589793')"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>
+                        <button id="edit-btn"><i class="fa fa-pencil"></i> Editer</button>
+                    </div>
+                    <div class="code-box">
+                        <pre id="code-content">
+<span class="token-comment">// Exemple qui calcule la circonférence du cercle en fonction de son rayon</span>
+<span class="token-keyword">const</span> rayon <span class="token-operator">=</span> <span class="token-number">5</span>;
+<span class="token-keyword">const</span> circonference <span class="token-operator">=</span><span class="token-number"> 2</span> * <span class="token-function">Math.PI</span> <span class="token-operator">*</span> rayon;
+<span class="token-function">console.log</span>(circonference);
+                        </pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Circonférence d'un cercle : 2 x Math.PI x rayon</li>
+                    <li>Aire d'un cercle : Math.PI x rayon**2</li>
+                    <li>Volume d'une sphère</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Documentation JavaScript</p>
+    </footer>
+
+    <script>
+        function goTo(section){
+            switch(section){
+                case 1:
+                    window.location.href = "#pi";
+                    break;
+                case 2:
+                    window.location.href="#e";
+                    break;
+                case 3:
+                    window.location.href="#round";
+                    break;
+                case 4:
+                    window.location.href="#floor";
+                    break;
+                case 5:
+                    window.location.href="#ceil";
+                    break;
+                case 6:
+                    window.location.href="#abs";
+                    break;
+                case 7:
+                    window.location.href="#pow";
+                    break;
+                case 8:
+                    window.location.href="#sqrt";
+                    break;
+                case 9:
+                    window.location.href="#sin";
+                    break;
+                case 10:
+                    window.location.href="#cos";
+                    break;
+                case 11:
+                    window.location.href="#tan";
+                    break;
+                case 12: 
+                    window.location.href="#random";
+                    break;
+                case 13:
+                    window.location.href="#min";
+                    break;
+                case 14:
+                    window.location.href="#max";
+                    break;
+                case 15:
+                    window.location.href="#trunc"
+                    break;
+                case 16:
+                    window.location.href="#sign"
+                    break;
+            }
+        }
+
+        // Fonction pour afficher ou masquer le bouton en fonction du défilement de la page
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // Fonction pour faire défiler la page vers le haut lorsque le bouton est cliqué
+        function scrollToTop() {
+            document.body.scrollTop = 0; // Pour les navigateurs Safari
+            document.documentElement.scrollTop = 0; // Pour les autres navigateurs
+        }
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+}
+
+document.getElementById('copy-btn').addEventListener('click', function() {
+            const codeContent = document.getElementById('code-content').innerText.trim(); // Supprimer les espaces inutiles
+            navigator.clipboard.writeText(codeContent).then(function() {
+                alert('Code copié dans le presse-papiers !');
+            }).catch(function(err) {
+                console.error('Erreur lors de la copie du code : ', err);
+            });
+        });
+
+    </script>
+</body>
+</html>

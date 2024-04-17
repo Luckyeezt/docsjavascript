@@ -1,251 +1,287 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ligne Verticale</title>
-    <link rel="stylesheet" href="../darklighttoggle.css">
     <style>
-        /* Réinitialisation et styles généraux */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* Réinitialisation et styles généraux */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: "Helvetica", sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            position: relative;
-            transition: background-color 0.3s;
-        }
+      body {
+        font-family: "Helvetica", sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        position: relative;
+        transition: background-color 0.3s;
+      }
 
-        header {
-            padding: 15px;
-            text-align: center;
-            background-color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      header {
+        padding: 15px;
+        text-align: center;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
 
-        header button {
-            padding: 10px 20px;
-            border-radius: 50px; /* Coins arrondis */
-            background-color: black;
-            color: white;
-            border: 2px solid white;
-            font-size: 16px; /* Taille du texte */
-            transition: opacity 0.3s, background-color 0.3s, color 0.3s; /* Transition plus rapide */
-            cursor: pointer;
-        }
+      header button {
+        padding: 10px 20px;
+        border-radius: 50px; /* Coins arrondis */
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+        font-size: 16px; /* Taille du texte */
+        transition: opacity 0.3s, background-color 0.3s, color 0.3s; /* Transition plus rapide */
+        cursor: pointer;
+      }
 
-        header button:hover {
-            opacity: 0.8;
-        }
+      header button:hover {
+        opacity: 0.8;
+      }
 
-        header img {
-            width: 150px;
-        }
+      header img {
+        width: 150px;
+      }
 
-        header h1 {
-            font-size: 36px; /* Taille du titre */
-            color: white;
-            font-family: Helvetica, sans-serif;
-        }
+      header h1 {
+        font-size: 36px; /* Taille du titre */
+        color: white;
+        font-family: Helvetica, sans-serif;
+      }
 
-        main {
-            display: flex;
-            flex: 1;
-        }
+      main {
+        display: flex;
+        flex: 1;
+        overflow-y: auto; /* Permet le défilement du contenu principal */
+        margin-top: 122px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 325px;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        margin-top: 122px;
+        height: 100vh; /* Calcul de la hauteur maximale moins la hauteur du header */
+        overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
+      }
 
-        nav {
-            background-color: #333;
-            color: white;
-            width: 250px;
-            padding: 20px;
-            display: block;
-        }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+      nav ul a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px; /* Espacement intérieur */
+        transition: background-color 0.3s;
+        border-bottom: 1px solid #666; /* Ligne de séparation entre les liens */
+      }
 
-        nav ul a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px; /* Espacement intérieur */
-            transition: background-color 0.3s;
-            border-bottom: 1px solid #666; /* Ligne de séparation entre les liens */
-        }
+      nav ul a:hover {
+        background-color: #555;
+        border-radius: 5px; /* Coins arrondis au survol */
+        border-right: 5px solid white;
+      }
 
-        nav ul a:hover {
-            background-color: #555;
-            border-radius: 5px; /* Coins arrondis au survol */
-            border-right: 5px solid white;
-        }
+      nav ul .submenu li a {
+        border-bottom: 5px solid white;
+      }
 
-        nav ul .submenu li a {
-            border-bottom: 5px solid white;
-        }
+      .sub-menu {
+        display: none;
+        background-color: #444;
+        padding-left: 20px;
+        border-radius: 5px; /* Coins arrondis */
+      }
 
-        .sub-menu {
-            display: none;
-            background-color: #444;
-            padding-left: 20px;
-            border-radius: 5px; /* Coins arrondis */
-        }
+      .sub-menu a {
+        color: #fff;
+      }
 
-        .sub-menu a {
-            color: #fff;
-        }
+      .sub-menu a:hover {
+        background-color: #666;
+        border-radius: 5px; /* Coins arrondis au survol */
+      }
 
-        .sub-menu a:hover {
-            background-color: #666;
-            border-radius: 5px; /* Coins arrondis au survol */
-        }
+      .sub-menu.show-sub-menu {
+        display: block;
+      }
 
-        .sub-menu.show-sub-menu {
-            display: block;
-        }
+      nav.show-nav {
+        display: block; /* Afficher le menu de navigation lorsqu'il est activé */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+      }
 
-        nav.show-nav {
-            display: block; /* Afficher le menu de navigation lorsqu'il est activé */
-            position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            padding: 20px;
-        }
+      header .hamburger {
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: none; /* Cacher le bouton par défaut sur les grands écrans */
+      }
+      .container {
+        margin-left: 30%;
+        margin-top: 20px;
+        padding: 0 20px;
+        width: 60%;
+        border-radius: 10px;
+      }
+      .container section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin-top: 10px;
+      }
 
-        .container {
-            flex: 1; /* Le conteneur principal prend tout l'espace restant */
-            padding: 20px;
-            color: #333; /* Couleur du texte principal */
-            background-color: white;
-        }
+      .container section h2 {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 10px;
+      }
 
-        header .hamburger {
-            font-size: 30px;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            display: none; /* Cacher le bouton par défaut sur les grands écrans */
-        }
+      .container section ul {
+        list-style: none;
+      }
 
-        /* Styles pour le mode sombre */
-        .toggleDarkButton {
-            background-color: black;
-            color: white;
-        }
+      .container section ul li {
+        margin-bottom: 8px;
+      }
 
-        .toggleLightButton {
-            background-color: white;
-            color: black;
-        }
-
-        .toggleDarkButton::after {
-            content: '\2600'; /* Symbole du soleil (code Unicode complet) */
-            margin-left: 5px;
-        }
-
-        .toggleLightButton::after {
-            content: "\1F319"; /* Symbole de la lune (code Unicode complet) */
-            margin-left: 5px;
-        }
-
-        @media (max-width: 768px) {
-            header .hamburger {
-                display: block; /* Afficher le bouton sur les petits écrans */
-            }
-
-            header {
-                padding: 10px;
-            }
-
-            header h1 {
-                font-size: 30px;
-            }
-
-            nav {
-                display: none;
-                width: 100%; /* Réglez la largeur à 100% pour remplir la largeur de l'écran */
-            }
-
-            img {
-                display: none;
-            }
-        }
-
-        /* Styles pour le mode sombre */
-        .dark-mode {
-            background-color: #222; /* Couleur de fond sombre */
-            color: #fff; /* Couleur du texte en mode sombre */
-        }
-
-        .dark-mode header {
-            background-color: #111; /* Couleur de fond du header en mode sombre */
-        }
-
-        .dark-mode nav {
-            background-color: #444; /* Couleur de fond de la barre de navigation en mode sombre */
-        }
-
-        .dark-mode nav ul a {
-            color: #fff; /* Couleur du texte des liens en mode sombre */
-        }
-
-        .dark-mode .container {
-            background-color: #333; /* Couleur de fond du contenu principal en mode sombre */
-            color: #fff; /* Couleur du texte du contenu principal en mode sombre */
-        }
+      .container section button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 10px;
+      }
     </style>
-</head>
-<body>
-<header>
-    <button id="toggle2" class="hamburger">&#9776;</button>
-    <img src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png" />
-    <h1>Introduction au Javascript</h1>
-    <button id="toggle" class="toggleLightButton">Mode sombre</button>
-</header>
+    <link rel="stylesheet" href="../docjscss.css" />
+  </head>
+  <body>
+    <header>
+      <button id="toggle2" class="hamburger">&#9776;</button>
+      <img
+        src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png"
+      />
+      <h1>Introduction au Javascript</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
 
-<main>
-    <nav>
+    <main>
+      <nav>
         <ul>
-            <li><a href="typesjs.html">Types de Données</a>
-                <ul class="sub-menu">
-                    <li><a href="typesjs.html#numbers">Nombres</a></li>
-                    <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
-                    <li><a href="typesjs.html#booleans">Booléens</a></li>
-                </ul>
-            </li>
-            <li><a href="variablesjs.html">Variables et Assignation</a></li>
-            <li><a href="operateursjs.html">Opérateurs Arithmétiques</a></li>
-            <li><a href="typesconversions.html">Conversions de Types</a></li>
-            <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a></li>
-            <li><a href="statementsjs.html">Les instructions conditionnelles</a></li>
-            <li><a href="stringmethodsjs.html">Les méthodes des chaînes de caractères</a></li>
+          <li>
+            <a href="typesjs.html">Types de Données</a>
+            <ul class="sub-menu">
+              <li><a href="typesjs.html#numbers">Nombres</a></li>
+              <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
+              <li><a href="typesjs.html#booleans">Booléens</a></li>
+            </ul>
+          </li>
+          <li><a href="variablesjs.html">Variables et Assignation</a></li>
+          <li><a href="operateursjs.html">Opérateurs Arithmétiques</a></li>
+          <li><a href="typesconversions.html">Conversions de Types</a></li>
+          <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a></li>
+          <li>
+            <a href="statementsjs.html">Les instructions conditionnelles</a>
+          </li>
+          <li>
+            <a href="stringmethodsjs.html"
+              >Les méthodes des chaînes de caractères</a
+            >
+          </li>
         </ul>
-    </nav>
+      </nav>
 
-    <div class="container">
+      <div class="container">
         <section>
-            <h2> C'est quoi le Javascript ? </h2>
+          <h2>Les différents types de données en Javascript</h2>
+          <ul>
+            <li><button>String :</button> Chaîne de caractères</li>
+            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
+            <li><button>Number :</button> Nombre</li>
+            <li><button>null :</button> Chaîne de caractères</li>
+            <li><button>undefined :</button> Chaîne de caractères</li>
+            <li><button>Tableau :</button> Chaîne de caractères</li>
+            <li><button>Objet:</button> Chaîne de caractères</li>
+          </ul>
         </section>
-    </div>
-</main>
+        <section>
+          <h2>Les différents types de données en Javascript</h2>
+          <ul>
+            <li><button>String :</button> Chaîne de caractères</li>
+            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
+            <li><button>Number :</button> Nombre</li>
+            <li><button>null :</button> Chaîne de caractères</li>
+            <li><button>undefined :</button> Chaîne de caractères</li>
+            <li><button>Tableau :</button> Chaîne de caractères</li>
+            <li><button>Objet:</button> Chaîne de caractères</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Les différents types de données en Javascript</h2>
+          <ul>
+            <li><button>String :</button> Chaîne de caractères</li>
+            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
+            <li><button>Number :</button> Nombre</li>
+            <li><button>null :</button> Chaîne de caractères</li>
+            <li><button>undefined :</button> Chaîne de caractères</li>
+            <li><button>Tableau :</button> Chaîne de caractères</li>
+            <li><button>Objet:</button> Chaîne de caractères</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Les différents types de données en Javascript</h2>
+          <ul>
+            <li><button>String :</button> Chaîne de caractères</li>
+            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
+            <li><button>Number :</button> Nombre</li>
+            <li><button>null :</button> Chaîne de caractères</li>
+            <li><button>undefined :</button> Chaîne de caractères</li>
+            <li><button>Tableau :</button> Chaîne de caractères</li>
+            <li><button>Objet:</button> Chaîne de caractères</li>
+          </ul>
+        </section>
 
-<script>
-    const toggleButton = document.getElementById("toggle");
+        <section>
+          <h2>Le type : String (chaine de caractères)</h2>
+        </section>
+      </div>
+    </main>
 
-    toggleButton.addEventListener("click", () => {
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
 
         // Récupérer le texte actuel du bouton
@@ -253,68 +289,69 @@
 
         // Modifier le texte du bouton en fonction du mode actuel
         if (currentText === "Mode clair") {
-            toggleButton.textContent = "Mode sombre";
+          toggleButton.textContent = "Mode sombre";
         } else if (currentText === "Mode sombre") {
-            toggleButton.textContent = "Mode clair";
+          toggleButton.textContent = "Mode clair";
         }
         // Ajouter ou supprimer les classes de style en fonction du mode actuel
         toggleButton.classList.toggle("toggleLightButton");
         toggleButton.classList.toggle("toggleDarkButton");
-    });
+      });
 
-    const toggleButton2 = document.getElementById("toggle2");
-    const nav = document.querySelector("nav");
+      const toggleButton2 = document.getElementById("toggle2");
+      const nav = document.querySelector("nav");
 
-    toggleButton2.addEventListener("click", (event) => {
+      toggleButton2.addEventListener("click", (event) => {
         event.stopPropagation(); // Arrête la propagation de l'événement pour éviter que le document ne reçoive le clic
         nav.classList.toggle("show-nav");
-    });
+      });
 
-    document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", () => {
         const mainMenuItems = document.querySelectorAll("nav ul > li");
 
         mainMenuItems.forEach((item) => {
-            item.addEventListener("click", (event) => {
-                const subMenu = item.querySelector(".sub-menu");
+          item.addEventListener("click", (event) => {
+            const subMenu = item.querySelector(".sub-menu");
 
-                // Vérifier si le clic provient d'un lien de sous-menu
-                const isSubMenuLink = event.target.closest(".sub-menu a");
+            // Vérifier si le clic provient d'un lien de sous-menu
+            const isSubMenuLink = event.target.closest(".sub-menu a");
 
-                if (isSubMenuLink) {
-                    const isSubMenuVisible = subMenu.classList.contains("show-sub-menu");
+            if (isSubMenuLink) {
+              const isSubMenuVisible =
+                subMenu.classList.contains("show-sub-menu");
 
-                    // Si le sous-menu est déjà visible, cacher la navigation
-                    if (isSubMenuVisible && window.innerWidth <= 768) {
-                        const nav = document.querySelector("nav");
-                        nav.classList.remove("show-nav");
-                    }
-                } else {
-                    // Cacher la navigation si le clic ne provient pas d'un lien de sous-menu
-                    const nav = document.querySelector("nav");
-                    if (window.innerWidth <= 768) {
-                        nav.classList.remove("show-nav");
-                    }
-                }
+              // Si le sous-menu est déjà visible, cacher la navigation
+              if (isSubMenuVisible && window.innerWidth <= 768) {
+                const nav = document.querySelector("nav");
+                nav.classList.remove("show-nav");
+              }
+            } else {
+              // Cacher la navigation si le clic ne provient pas d'un lien de sous-menu
+              const nav = document.querySelector("nav");
+              if (window.innerWidth <= 768) {
+                nav.classList.remove("show-nav");
+              }
+            }
 
-                // Empêcher le lien de se rendre à la page
-                event.preventDefault();
+            // Empêcher le lien de se rendre à la page
+            event.preventDefault();
 
-                // Basculer la visibilité du sous-menu
-                subMenu.classList.toggle("show-sub-menu");
-            });
+            // Basculer la visibilité du sous-menu
+            subMenu.classList.toggle("show-sub-menu");
+          });
         });
 
         // Gestionnaire d'événement pour fermer la navigation en dehors des éléments de navigation
         document.addEventListener("click", (event) => {
-            const nav = document.querySelector("nav");
-            const isHamburgerClick = event.target.id === "toggle2";
-            const isNavOpen = nav.classList.contains("show-nav");
+          const nav = document.querySelector("nav");
+          const isHamburgerClick = event.target.id === "toggle2";
+          const isNavOpen = nav.classList.contains("show-nav");
 
-            if (!isHamburgerClick && isNavOpen && window.innerWidth <= 768) {
-                nav.classList.remove("show-nav");
-            }
+          if (!isHamburgerClick && isNavOpen && window.innerWidth <= 768) {
+            nav.classList.remove("show-nav");
+          }
         });
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
