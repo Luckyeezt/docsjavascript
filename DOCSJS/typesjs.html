@@ -4,7 +4,186 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ligne Verticale</title>
-    <link rel="stylesheet" href="../style.css">
+    <style>
+      /* Réinitialisation et styles généraux */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Helvetica", sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        position: relative;
+        transition: background-color 0.3s;
+      }
+
+      header {
+        padding: 15px;
+        text-align: center;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      header button {
+        padding: 10px 20px;
+        border-radius: 50px; /* Coins arrondis */
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+        font-size: 16px; /* Taille du texte */
+        transition: opacity 0.3s, background-color 0.3s, color 0.3s; /* Transition plus rapide */
+        cursor: pointer;
+      }
+
+      header button:hover {
+        opacity: 0.8;
+      }
+
+      header img {
+        width: 150px;
+      }
+
+      header h1 {
+        font-size: 36px; /* Taille du titre */
+        color: white;
+        font-family: Helvetica, sans-serif;
+      }
+
+      main {
+        display: flex;
+        flex: 1;
+        overflow-y: auto; /* Permet le défilement du contenu principal */
+        margin-top: 122px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 325px;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        margin-top: 122px;
+        height: 100vh; /* Calcul de la hauteur maximale moins la hauteur du header */
+        overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px; /* Espacement intérieur */
+        transition: background-color 0.3s;
+        border-bottom: 1px solid #666; /* Ligne de séparation entre les liens */
+      }
+
+      nav ul a:hover {
+        background-color: #555;
+        border-radius: 5px; /* Coins arrondis au survol */
+        border-right: 5px solid white;
+      }
+
+      nav ul .submenu li a {
+        border-bottom: 5px solid white;
+      }
+
+      .sub-menu {
+        display: none;
+        background-color: #444;
+        padding-left: 20px;
+        border-radius: 5px; /* Coins arrondis */
+      }
+
+      .sub-menu a {
+        color: #fff;
+      }
+
+      .sub-menu a:hover {
+        background-color: #666;
+        border-radius: 5px; /* Coins arrondis au survol */
+      }
+
+      .sub-menu.show-sub-menu {
+        display: block;
+      }
+
+      nav.show-nav {
+        display: block; /* Afficher le menu de navigation lorsqu'il est activé */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+      }
+
+      header .hamburger {
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: none; /* Cacher le bouton par défaut sur les grands écrans */
+      }
+      .container {
+        margin-left: 30%;
+        margin-top: 20px;
+        padding: 0 20px;
+        width: 60%;
+        border-radius: 10px;
+      }
+      .container section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .container section h2 {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 10px;
+      }
+
+      .container section ul {
+        list-style: none;
+      }
+
+      .container section ul li {
+        margin-bottom: 8px;
+      }
+
+      .container section button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+    </style>
+    <link rel="stylesheet" href="../docjscss.css" />
   </head>
   <body>
     <header>
