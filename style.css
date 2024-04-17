@@ -1,243 +1,84 @@
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* Styles pour le mode sombre */
+      .dark-mode {
+        background-color: #222; /* Couleur de fond sombre */
+        color: #fff; /* Couleur du texte en mode sombre */
+      }
 
-        body {
-            font-family: "Helvetica", sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            position: relative;
-            transition: background-color 0.3s;
+      .dark-mode header {
+        background-color: #111; /* Couleur de fond du header en mode sombre */
+      }
+
+      .dark-mode nav {
+        background-color: #444; /* Couleur de fond de la barre de navigation en mode sombre */
+      }
+
+      .dark-mode nav ul a {
+        color: #fff; /* Couleur du texte des liens en mode sombre */
+      }
+
+      .dark-mode .container {
+            color: #fff; /* Couleur du texte du contenu principal en mode sombre */;
+    }
+
+      .dark-mode section {
+        background-color: #252424; /* Couleur de fond sombre pour les sections */
+        color: #fff; /* Couleur du texte en mode sombre pour les sections */
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); /* Ombre légère en mode sombre */
+      }
+
+      .dark-mode section h2 {
+        color: #fff; /* Couleur du titre en mode sombre */
+      }
+
+      .dark-mode section ul li {
+        color: #ddd; /* Couleur du texte des éléments de liste en mode sombre */
+      }
+            /* Styles pour le mode sombre */
+            .toggleDarkButton {
+                background-color: black;
+                color: white;
+              }
+        
+              .toggleLightButton {
+                background-color: white;
+                color: black;
+              }
+        
+              .toggleDarkButton::after {
+                content: "\2600"; /* Symbole du soleil (code Unicode complet) */
+                margin-left: 5px;
+              }
+        
+              .toggleLightButton::after {
+                content: "\1F319"; /* Symbole de la lune (code Unicode complet) */
+                margin-left: 5px;
+              }
+
+      /* ------------------- MOBILE RESPONSIVE --------------------- */
+      @media (max-width: 768px) {
+        header .hamburger {
+          display: block; /* Afficher le bouton sur les petits écrans */
         }
 
         header {
-            padding: 15px;
-            text-align: center;
-            background-color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header button {
-            padding: 10px 20px;
-            border-radius: 50px; /* Coins arrondis */
-            background-color: black;
-            color: white;
-            border: 2px solid white;
-            font-size: 16px; /* Taille du texte */
-            transition: opacity 0.3s, background-color 0.3s, color 0.3s; /* Transition plus rapide */
-            cursor: pointer;
-        }
-
-        header button:hover {
-            opacity: 0.8;
-        }
-
-        header img {
-            width: 150px;
+          padding: 10px;
+          z-index: 1;
         }
 
         header h1 {
-            font-size: 36px; /* Taille du titre */
-            color: white;
-            font-family: Helvetica, sans-serif;
+          font-size: 30px;
         }
 
- main {
-        display: flex;
-        flex: 1;
-        overflow-y: auto; /* Permet le défilement du contenu principal */
-        margin-top: 25px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
-      }
-
-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 325px;
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        margin-top: 122px;
-        height: 100vh; /* Calcul de la hauteur maximale moins la hauteur du header */
-        overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
-      }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
+        nav {
+          display: none;
+          width: 100%; /* Réglez la largeur à 100% pour remplir la largeur de l'écran */
         }
 
-        nav ul a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px; /* Espacement intérieur */
-            transition: background-color 0.3s;
-            border-bottom: 1px solid #666; /* Ligne de séparation entre les liens */
+        img {
+          display: none;
         }
 
-        nav ul a:hover {
-            background-color: #555;
-            border-radius: 5px; /* Coins arrondis au survol */
-            border-right: 5px solid white;
-        }
-
-        nav ul .submenu li a {
-            border-bottom: 5px solid white;
-        }
-
-        .sub-menu {
-            display: none;
-            background-color: #444;
-            padding-left: 20px;
-            border-radius: 5px; /* Coins arrondis */
-        }
-
-        .sub-menu a {
-            color: #fff;
-        }
-
-        .sub-menu a:hover {
-            background-color: #666;
-            border-radius: 5px; /* Coins arrondis au survol */
-        }
-
-        .sub-menu.show-sub-menu {
-            display: block;
-        }
-
-        nav.show-nav {
-            display: block; /* Afficher le menu de navigation lorsqu'il est activé */
-            position: absolute;
-            top: 70px;
-            left: 0;
+        .container {
             width: 100%;
-            background-color: #333;
-            padding: 20px;
         }
-
-        header .hamburger {
-            font-size: 30px;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            display: none; /* Cacher le bouton par défaut sur les grands écrans */
-        }
-
-      .container {
-        margin-left: 30%;
-        margin-top: 20px;
-        padding: 0 20px;
-        width: 60%;
-        border-radius: 10px;
       }
-      .container section {
-        background-color: #ffffff;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .container section h2 {
-        font-size: 24px;
-        color: #333333;
-        margin-bottom: 10px;
-      }
-
-      .container section ul {
-        list-style: none;
-      }
-
-      .container section ul li {
-        margin-bottom: 8px;
-      }
-
-      .container section button {
-        padding: 6px 12px;
-        border: none;
-        border-radius: 5px;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        margin-right: 10px;
-      }
-        /* Styles pour le mode sombre */
-        .toggleDarkButton {
-            background-color: black;
-            color: white;
-        }
-
-        .toggleLightButton {
-            background-color: white;
-            color: black;
-        }
-
-        .toggleDarkButton::after {
-            content: '\2600'; /* Symbole du soleil (code Unicode complet) */
-            margin-left: 5px;
-        }
-
-        .toggleLightButton::after {
-            content: "\1F319"; /* Symbole de la lune (code Unicode complet) */
-            margin-left: 5px;
-        }
-
-        @media (max-width: 768px) {
-            header .hamburger {
-                display: block; /* Afficher le bouton sur les petits écrans */
-            }
-
-            header {
-                padding: 10px;
-                z-index: 1;
-            }
-
-            header h1 {
-                font-size: 30px;
-            }
-
-            nav {
-                display: none;
-                width: 100%; /* Réglez la largeur à 100% pour remplir la largeur de l'écran */
-            }
-
-            img {
-                display: none;
-            }
-            .container {
-               width: 100%;
-        }}
-
-        /* Styles pour le mode sombre */
-        .dark-mode {
-            background-color: #222; /* Couleur de fond sombre */
-            color: #fff; /* Couleur du texte en mode sombre */
-        }
-
-        .dark-mode header {
-            background-color: #111; /* Couleur de fond du header en mode sombre */
-        }
-
-        .dark-mode nav {
-            background-color: #444; /* Couleur de fond de la barre de navigation en mode sombre */
-        }
-
-        .dark-mode nav ul a {
-            color: #fff; /* Couleur du texte des liens en mode sombre */
-        }
-
-        .dark-mode .container {
-            background-color: #333; /* Couleur de fond du contenu principal en mode sombre */
-            color: #fff; /* Couleur du texte du contenu principal en mode sombre */
-        }
-
