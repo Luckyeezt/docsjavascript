@@ -5,275 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ligne Verticale</title>
     <style>
-      /* Réinitialisation et styles généraux */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Helvetica", sans-serif;
-        background-color: #f0f0f0;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        position: relative;
-        transition: background-color 0.3s;
-      }
-
-      header {
-        padding: 15px;
-        text-align: center;
-        background-color: black;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-      }
-
-      header button {
-        padding: 10px 20px;
-        border-radius: 50px; /* Coins arrondis */
-        background-color: black;
-        color: white;
-        border: 2px solid white;
-        font-size: 16px; /* Taille du texte */
-        transition: opacity 0.3s, background-color 0.3s, color 0.3s; /* Transition plus rapide */
-        cursor: pointer;
-      }
-
-      header button:hover {
-        opacity: 0.8;
-      }
-
-      header img {
-        width: 150px;
-      }
-
-      header h1 {
-        font-size: 36px; /* Taille du titre */
-        color: white;
-        font-family: Helvetica, sans-serif;
-      }
-
-      main {
-        display: flex;
-        flex: 1;
-        overflow-y: auto; /* Permet le défilement du contenu principal */
-        margin-top: 122px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
-      }
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 325px;
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        margin-top: 122px;
-        height: 100vh; /* Calcul de la hauteur maximale moins la hauteur du header */
-        overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
-      }
-
-      nav ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      nav ul a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        padding: 12px 20px; /* Espacement intérieur */
-        transition: background-color 0.3s;
-        border-bottom: 1px solid #666; /* Ligne de séparation entre les liens */
-      }
-
-      nav ul a:hover {
-        background-color: #555;
-        border-radius: 5px; /* Coins arrondis au survol */
-        border-right: 5px solid white;
-      }
-
-      nav ul .submenu li a {
-        border-bottom: 5px solid white;
-      }
-
-      .sub-menu {
-        display: none;
-        background-color: #444;
-        padding-left: 20px;
-        border-radius: 5px; /* Coins arrondis */
-      }
-
-      .sub-menu a {
-        color: #fff;
-      }
-
-      .sub-menu a:hover {
-        background-color: #666;
-        border-radius: 5px; /* Coins arrondis au survol */
-      }
-
-      .sub-menu.show-sub-menu {
-        display: block;
-      }
-
-      nav.show-nav {
-        display: block; /* Afficher le menu de navigation lorsqu'il est activé */
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 20px;
-      }
-
-      header .hamburger {
-        font-size: 30px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        display: none; /* Cacher le bouton par défaut sur les grands écrans */
-      }
-      .container {
-        margin-left: 30%;
-        margin-top: 20px;
-        padding: 0 20px;
-        width: 60%;
-        border-radius: 10px;
-      }
-      .container section {
-        background-color: #ffffff;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .container section h2 {
-        font-size: 24px;
-        color: #333333;
-        margin-bottom: 10px;
-      }
-
-      .container section ul {
-        list-style: none;
-      }
-
-      .container section ul li {
-        margin-bottom: 8px;
-      }
-
-      .container section button {
-        padding: 6px 12px;
-        border: none;
-        border-radius: 5px;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        margin-right: 10px;
-      }
+          .toolbar {
+    color: white;
+    background-color: #282a36; /* Couleur de fond de la barre d'outils */
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    position: relative;
+    left: 500px;
+display: none;
+  }
     </style>
-    <link rel="stylesheet" href="../style.css" />
-  </head>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
   <body>
     <header>
-      <button id="toggle2" class="hamburger">&#9776;</button>
-      <img
-        src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png"
-      />
+      <img src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png">
       <h1>Introduction au Javascript</h1>
       <button id="toggle" class="toggleLightButton">Mode sombre</button>
     </header>
 
     <main>
-      <nav>
-        <ul>
-          <li>
-            <a href="typesjs.html">Types de Données</a>
-            <ul class="sub-menu">
-              <li><a href="typesjs.html#numbers">Nombres</a></li>
-              <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
-              <li><a href="typesjs.html#booleans">Booléens</a></li>
+        <nav>
+            <ul>
+              <li>
+                <a href="typesjs.html">Types de Données</a>
+                <ul class="sub-menu">
+                  <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
+                  <li><a href="typesjs.html#numbers">Nombres</a></li>
+                  <li><a href="typesjs.html#booleans">Booléens</a></li>
+                </li>
+                </ul>
+
+              <li>
+                <a href="variablesjs.html">Variables et Assignation</a>
+              <ul class="sub-menu">
+                <li><a href="variables.html#const">Créer une variable const</a></li>
+                <li><a href="variables.html#let">Créer une variable let</a></li>
+                <li><a href="variables.html#var">Créer une variable var</a></li>
+
+              </li>
             </ul>
-          </li>
-          <li><a href="variablesjs.html">Variables et Assignation</a></li>
-          <li><a href="operateursjs.html">Opérateurs Arithmétiques</a></li>
-          <li><a href="typesconversions.html">Conversions de Types</a></li>
-          <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a></li>
-          <li>
-            <a href="statementsjs.html">Les instructions conditionnelles</a>
-          </li>
-          <li>
-            <a href="stringmethodsjs.html"
-              >Les méthodes des chaînes de caractères</a
-            >
-          </li>
-        </ul>
-      </nav>
+
+              <li>
+                <a href="operateursjs.html">Opérateurs Arithmétiques</a>
+                <ul class="sub-menu">
+                    <li><a href="operateursjs.html#addition">L'opérateur d'addition</a></li>
+                    <li><a href="operateursjs.html#soustraction">L'opérateur de soustraction</a></li>
+                    <li><a href="operateursjs.html#multiplication">L'opérateur de multiplication</a></li>
+                    <li><a href="operateursjs.html#division">L'opérateur de division</a></li>
+                    <li><a href="operateursjs.html#modulo">L'opérateur de modulo</a></li>
+                    <li><a href="operateursjs.html#puissance">L'opérateur de puissance</a></li>
+                </li>
+            </ul>
+
+              <li><a href="typesconversions.html">Conversions de Types</a></li>
+              <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a></li>
+              <li>
+                <a href="statementsjs.html">Les instructions conditionnelles</a>
+              </li>
+              <li>
+                <a href="stringmethodsjs.html">Les méthodes des chaînes de caractères</a>
+              </li>
+            </ul>
+          </nav>
+
 
       <div class="container">
-        <section>
+        <section class="types">
           <h2>Les différents types de données en Javascript</h2>
           <ul>
-            <li><button>String :</button> Chaîne de caractères</li>
-            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
-            <li><button>Number :</button> Nombre</li>
-            <li><button>null :</button> Chaîne de caractères</li>
-            <li><button>undefined :</button> Chaîne de caractères</li>
-            <li><button>Tableau :</button> Chaîne de caractères</li>
-            <li><button>Objet:</button> Chaîne de caractères</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Les différents types de données en Javascript</h2>
-          <ul>
-            <li><button>String :</button> Chaîne de caractères</li>
-            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
-            <li><button>Number :</button> Nombre</li>
-            <li><button>null :</button> Chaîne de caractères</li>
-            <li><button>undefined :</button> Chaîne de caractères</li>
-            <li><button>Tableau :</button> Chaîne de caractères</li>
-            <li><button>Objet:</button> Chaîne de caractères</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Les différents types de données en Javascript</h2>
-          <ul>
-            <li><button>String :</button> Chaîne de caractères</li>
-            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
-            <li><button>Number :</button> Nombre</li>
-            <li><button>null :</button> Chaîne de caractères</li>
-            <li><button>undefined :</button> Chaîne de caractères</li>
-            <li><button>Tableau :</button> Chaîne de caractères</li>
-            <li><button>Objet:</button> Chaîne de caractères</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Les différents types de données en Javascript</h2>
-          <ul>
-            <li><button>String :</button> Chaîne de caractères</li>
-            <li><button>Booléen :</button> Vrai et Faux (True/False)</li>
-            <li><button>Number :</button> Nombre</li>
-            <li><button>null :</button> Chaîne de caractères</li>
-            <li><button>undefined :</button> Chaîne de caractères</li>
-            <li><button>Tableau :</button> Chaîne de caractères</li>
-            <li><button>Objet:</button> Chaîne de caractères</li>
+            <li><b>String</b> : C'est une séquence de caractères comme des lettres, chiffres, symboles pour représenter un texte en Javascript.</li>
+            <li><b>Boolean</b> : Permet de représenter une valeur logique avec les booléens true(vrai) et false(faux).</li>
+            <li><b>Number</b> : Permet de réprésenter des valeurs numériques comme un nombre entier ou un nombre décimal.</li>
+            <li><b>Array</b> : Permet de stocker une collection ordonnée d'élements, offre une manipulation de données efficace telle qu'une liste.</li>
+            <li><b>Object</b> : Permet de regrouper des données et des fonctionnalités dans une seule unité.</li>
+            <li><b>undefined</b> : Valeur par défaut si une variable à été déclarée mais aucune valeur lui à été assignée.</li>
+            <li><b>null</b> : Réprésente l'absence volontaire de valeur pour une variable.</li>
           </ul>
         </section>
 
-        <section>
+        <section id="strings">
           <h2>Le type : String (chaine de caractères)</h2>
+          <p>Un "string" est une chaine de caractères, cela peut être un mot, une expression ou une phrase.</p>
+          <p>Comme tout élément en Javascript, le string à 3 syntaxes particulières (3 façons de s'écrire) : </p><br>
+          <ul>
+            <li>Guillemets doubles : <button class="copy">" "</button> -> Utilisés pour créer une chaîne de caractères.</li>
+            <li>Guillemets simples : <button class="copy">' '</button> -> Utilisés également pour créer une chaîne de caractères.</li> 
+            <li>Backticks : <button class="copy">` `</button> -> Utilisés pour créer une chaïne de caractères sur plusieurs lignes (évitant la concaténation) et est utilisé pour les interpolations de variables.</li>
+          </ul>
+          <div class="container1">
+        
+            <div class="code-box">
+                <div class="toolbar">
+                    <div class="color-circle red"></div>
+                    <div class="color-circle yellow"></div>
+                    <div class="color-circle green"></div>
+                    <button id="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre id="code-content">
+<span class="token-string">"Bienvenue sur notre site !"</span> <span class="token-comment">// Ici on utilise les guillemets doubles.</span>
+<span class="token-string">'Bienvenue sur notre site !'</span> <span class="token-comment">// Ici on utilise les guillemets simples.</span>
+<span class="token-string">`Bienvenue sur notre site !`</span> <span class="token-comment">// Ici on utilise les backticks.</span>
+                </pre>
+            </div>
+          </div>
         </section>
+
+        <section id="numbers">
+            <h2>Le type : Number (valeurs numériques)</h2>
+            <p>Un "number" est une valeur numérique en JavaScript, pouvant être un entier ou un nombre décimal.</p>
+            <p>Les nombres s'utilisent principalement pour les opérations, en Javascript nous pouvons écrire un nombre entier et décimal qu'il soit positif ou négatif :</p>
+            <div class="container1">
+          
+              <div class="code-box">
+                <div class="toolbar">
+                      <div class="color-circle red"></div>
+                      <div class="color-circle yellow"></div>
+                      <div class="color-circle green"></div>
+                      <button id="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                      <pre id="code-content">
+  <span class="token-number">2.5</span> <span class="token-comment">// Ceci est un nombre décimal positif.</span>
+  <span class="token-number">1000000</span> <span class="token-comment">// Ceci est un nombre entier positif.</span>
+  <span class="token-number">-50.25</span> <span class="token-comment">// Ceci est un nombre décimal négatif.</span>
+  <span class="token-number">-100</span> <span class="token-comment">// Ceci est un nombre entier négatif.</span>
+                  </pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="booleans">
+            <h2>Le type : Boolean (instructions logiques)</h2>
+            <p>Un "boolean" contient seulement deux valeurs "true" (vrai) et "false" (faux)</p>
+            <p>Les booléens s'utilisent comme des conditions vraies ou fausses, principalement utilisés pour vérifier si quelque chose est vrai ou faux (avec une comparaison par exemple), dans ce cas true reflète "oui" et false reflète "non"</p>
+
+          </section>
       </div>
     </main>
 
@@ -298,60 +167,88 @@
         toggleButton.classList.toggle("toggleDarkButton");
       });
 
-      const toggleButton2 = document.getElementById("toggle2");
-      const nav = document.querySelector("nav");
-
-      toggleButton2.addEventListener("click", (event) => {
-        event.stopPropagation(); // Arrête la propagation de l'événement pour éviter que le document ne reçoive le clic
-        nav.classList.toggle("show-nav");
-      });
-
       document.addEventListener("DOMContentLoaded", () => {
-        const mainMenuItems = document.querySelectorAll("nav ul > li");
+        // Sélectionnez tous les éléments <li> de la navigation
+        const menuItems = document.querySelectorAll("nav ul > li");
 
-        mainMenuItems.forEach((item) => {
+        // Parcourir tous les éléments <li> et ajouter un gestionnaire d'événements clic
+        menuItems.forEach((item) => {
           item.addEventListener("click", (event) => {
+            // Trouver le sous-menu (ul.sub-menu) à l'intérieur de l'élément <li>
             const subMenu = item.querySelector(".sub-menu");
 
-            // Vérifier si le clic provient d'un lien de sous-menu
-            const isSubMenuLink = event.target.closest(".sub-menu a");
+            // Vérifiez si le clic a été effectué sur le sous-menu lui-même
+            const isSubMenuClick = event.target.closest(".sub-menu") !== null;
 
-            if (isSubMenuLink) {
-              const isSubMenuVisible =
-                subMenu.classList.contains("show-sub-menu");
+            // Si le clic n'a pas été effectué sur le sous-menu
+            if (!isSubMenuClick) {
+              // Empêcher le comportement par défaut du lien principal
+              event.preventDefault();
 
-              // Si le sous-menu est déjà visible, cacher la navigation
-              if (isSubMenuVisible && window.innerWidth <= 768) {
-                const nav = document.querySelector("nav");
-                nav.classList.remove("show-nav");
-              }
-            } else {
-              // Cacher la navigation si le clic ne provient pas d'un lien de sous-menu
-              const nav = document.querySelector("nav");
-              if (window.innerWidth <= 768) {
-                nav.classList.remove("show-nav");
+              // Vérifiez si le sous-menu existe et basculez sa visibilité
+              if (subMenu) {
+                subMenu.classList.toggle("show-sub-menu");
               }
             }
-
-            // Empêcher le lien de se rendre à la page
-            event.preventDefault();
-
-            // Basculer la visibilité du sous-menu
-            subMenu.classList.toggle("show-sub-menu");
           });
         });
-
-        // Gestionnaire d'événement pour fermer la navigation en dehors des éléments de navigation
-        document.addEventListener("click", (event) => {
-          const nav = document.querySelector("nav");
-          const isHamburgerClick = event.target.id === "toggle2";
-          const isNavOpen = nav.classList.contains("show-nav");
-
-          if (!isHamburgerClick && isNavOpen && window.innerWidth <= 768) {
-            nav.classList.remove("show-nav");
-          }
-        });
       });
+
+      function goTo(section) {
+    switch (section) {
+        case '1':
+            window.location.href = "#strings";
+            break;
+        case '2':
+            window.location.href = "#numbers";
+            break;
+        case '3':
+            window.location.href = "#booleans";
+            break;
+        case '4':
+            window.location.href = "#arrays";
+            break;
+        case '5':
+            window.location.href = "#objects";
+            break;
+        case '6':
+            window.location.href = "#undefined";
+            break;
+        case '7':
+            window.location.href = "#null";
+            break;
+        default:
+            break;
+    }
+}
+
+// Sélectionnez le bouton avec la classe "copy"
+const copyButton = document.querySelector('.copy');
+
+// Ajoutez un gestionnaire d'événements au clic sur le bouton "copy"
+copyButton.addEventListener('click', () => {
+    // Récupérez le texte contenu dans le bouton
+    const buttonText = copyButton.textContent;
+
+    // Créez un nouvel élément textarea dans le document
+    const textArea = document.createElement('textarea');
+    textArea.value = buttonText; // Définissez la valeur du textarea avec le texte du bouton
+
+    // Ajoutez le textarea au document (il n'est pas visible à l'écran)
+    document.body.appendChild(textArea);
+
+    // Sélectionnez le texte dans le textarea
+    textArea.select();
+    
+    // Copiez le texte sélectionné dans le presse-papiers du système
+    document.execCommand('copy');
+
+    // Supprimez le textarea du document
+    document.body.removeChild(textArea);
+
+    // Facultatif : Affichez une confirmation à l'utilisateur
+    alert('Texte copié : ' + buttonText);
+});
     </script>
   </body>
 </html>
